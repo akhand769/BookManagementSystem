@@ -26,5 +26,10 @@ namespace BookManagementSystem
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Books().Show();
+        }
     }
 }

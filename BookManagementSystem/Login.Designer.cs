@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,9 +42,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,6 +57,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(252, 451);
             this.panel1.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(43, 344);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(153, 31);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "NICE SERVICE";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(13, 210);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(219, 31);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "LARGE COLLECTION";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(52, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(128, 31);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "NICE STAFF";
             // 
             // panel2
             // 
@@ -105,6 +138,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "LOGIN";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -161,39 +195,6 @@
             this.label1.Size = new System.Drawing.Size(183, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "BOOK SHOP";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(52, 91);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 31);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "NICE STAFF";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(13, 210);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(219, 31);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "LARGE COLLECTION";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(43, 344);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(153, 31);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "NICE SERVICE";
             // 
             // Login
             // 
