@@ -1,6 +1,6 @@
 ﻿namespace BookManagementSystem
 {
-    partial class Form1
+    partial class Splash
     {
         /// <summary>
         ///  Required designer variable.
@@ -32,6 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,11 +74,22 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Loading ...";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(137, 404);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 28);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "%";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox1);
@@ -97,5 +109,6 @@
         private PictureBox pictureBox1;
         private ProgressBar progressBar1;
         private Label label2;
+        private Label label3;
     }
 }
