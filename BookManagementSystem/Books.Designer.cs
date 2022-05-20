@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Books));
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -66,9 +64,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -79,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox3
@@ -95,8 +97,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.comboBox2);
             this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
@@ -117,35 +121,15 @@
             this.panel2.Size = new System.Drawing.Size(1058, 809);
             this.panel2.TabIndex = 3;
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(415, 410);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(181, 38);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "Book Shop";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 401);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1031, 389);
-            this.dataGridView1.TabIndex = 16;
-            // 
             // button4
             // 
             this.button4.AutoEllipsis = true;
             this.button4.BackColor = System.Drawing.Color.Khaki;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button4.Location = new System.Drawing.Point(253, 329);
+            this.button4.Location = new System.Drawing.Point(295, 293);
             this.button4.Name = "button4";
             this.button4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button4.Size = new System.Drawing.Size(172, 55);
@@ -158,9 +142,10 @@
             this.button3.AutoEllipsis = true;
             this.button3.BackColor = System.Drawing.Color.Khaki;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button3.Location = new System.Drawing.Point(704, 329);
+            this.button3.Location = new System.Drawing.Point(757, 297);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(166, 55);
             this.button3.TabIndex = 14;
@@ -172,9 +157,10 @@
             this.button2.AutoEllipsis = true;
             this.button2.BackColor = System.Drawing.Color.Khaki;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button2.Location = new System.Drawing.Point(488, 329);
+            this.button2.Location = new System.Drawing.Point(526, 297);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(170, 55);
             this.button2.TabIndex = 13;
@@ -186,9 +172,10 @@
             this.button1.AutoEllipsis = true;
             this.button1.BackColor = System.Drawing.Color.Khaki;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button1.Location = new System.Drawing.Point(22, 329);
+            this.button1.Location = new System.Drawing.Point(50, 293);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(181, 55);
             this.button1.TabIndex = 12;
@@ -240,7 +227,7 @@
             "Physics",
             "Novels",
             "Biography"});
-            this.comboBox1.Location = new System.Drawing.Point(439, 239);
+            this.comboBox1.Location = new System.Drawing.Point(439, 231);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(230, 33);
             this.comboBox1.TabIndex = 7;
@@ -249,9 +236,10 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.Location = new System.Drawing.Point(439, 188);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(96, 25);
+            this.label12.Size = new System.Drawing.Size(144, 30);
             this.label12.TabIndex = 6;
             this.label12.Text = "Categories";
             // 
@@ -487,6 +475,59 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(421, 374);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(119, 32);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "Book List";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(14, 514);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(1026, 280);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Programming",
+            "Networking",
+            "Math",
+            "Physics",
+            "Novels",
+            "Biography"});
+            this.comboBox2.Location = new System.Drawing.Point(402, 418);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(230, 33);
+            this.comboBox2.TabIndex = 18;
+            this.comboBox2.Text = "Filter by Category";
+            // 
+            // button5
+            // 
+            this.button5.AutoEllipsis = true;
+            this.button5.BackColor = System.Drawing.Color.Khaki;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button5.Location = new System.Drawing.Point(667, 418);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(142, 37);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Refresh";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
             // Books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -499,7 +540,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -515,6 +555,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -523,8 +564,6 @@
 
         private PictureBox pictureBox3;
         private Panel panel2;
-        private Label label15;
-        private DataGridView dataGridView1;
         private Button button4;
         private Button button3;
         private Button button2;
@@ -558,5 +597,9 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox2;
+        private Label label15;
+        private Button button5;
+        private ComboBox comboBox2;
+        private DataGridView dataGridView1;
     }
 }
