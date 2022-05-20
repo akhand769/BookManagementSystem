@@ -26,5 +26,15 @@ namespace BookManagementSystem
         {
 
         }
+
+        private void book_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
