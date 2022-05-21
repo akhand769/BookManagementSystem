@@ -94,6 +94,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // panel2
             // 
@@ -120,8 +121,9 @@
             this.panel2.Location = new System.Drawing.Point(314, 16);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(846, 647);
+            this.panel2.Size = new System.Drawing.Size(880, 824);
             this.panel2.TabIndex = 3;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // BookDGV
             // 
@@ -131,7 +133,7 @@
             this.BookDGV.RowHeadersWidth = 51;
             this.BookDGV.RowTemplate.Height = 29;
             this.BookDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.BookDGV.Size = new System.Drawing.Size(792, 255);
+            this.BookDGV.Size = new System.Drawing.Size(846, 425);
             this.BookDGV.TabIndex = 20;
             this.BookDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BookDGV_CellContentClick);
             // 
@@ -259,6 +261,7 @@
             this.PriceTb.Name = "PriceTb";
             this.PriceTb.Size = new System.Drawing.Size(121, 27);
             this.PriceTb.TabIndex = 11;
+            this.PriceTb.TextChanged += new System.EventHandler(this.PriceTb_TextChanged);
             // 
             // QtyTb
             // 
@@ -267,6 +270,7 @@
             this.QtyTb.Name = "QtyTb";
             this.QtyTb.Size = new System.Drawing.Size(121, 27);
             this.QtyTb.TabIndex = 10;
+            this.QtyTb.TextChanged += new System.EventHandler(this.QtyTb_TextChanged);
             // 
             // Pricelbl
             // 
@@ -309,6 +313,7 @@
             this.BCatCb.Size = new System.Drawing.Size(185, 29);
             this.BCatCb.TabIndex = 7;
             this.BCatCb.Text = "Select Category";
+            this.BCatCb.SelectedIndexChanged += new System.EventHandler(this.BCatCb_SelectedIndexChanged);
             // 
             // categorieslbl
             // 
@@ -320,6 +325,7 @@
             this.categorieslbl.Size = new System.Drawing.Size(116, 23);
             this.categorieslbl.TabIndex = 6;
             this.categorieslbl.Text = "Categories";
+            this.categorieslbl.Click += new System.EventHandler(this.categorieslbl_Click);
             // 
             // BauthTb
             // 
@@ -328,6 +334,7 @@
             this.BauthTb.Name = "BauthTb";
             this.BauthTb.Size = new System.Drawing.Size(144, 27);
             this.BauthTb.TabIndex = 4;
+            this.BauthTb.TextChanged += new System.EventHandler(this.BauthTb_TextChanged);
             // 
             // BTitleTb
             // 
@@ -336,6 +343,7 @@
             this.BTitleTb.Name = "BTitleTb";
             this.BTitleTb.Size = new System.Drawing.Size(149, 27);
             this.BTitleTb.TabIndex = 3;
+            this.BTitleTb.TextChanged += new System.EventHandler(this.BTitleTb_TextChanged);
             // 
             // Authorlbl
             // 
@@ -347,6 +355,7 @@
             this.Authorlbl.Size = new System.Drawing.Size(84, 25);
             this.Authorlbl.TabIndex = 2;
             this.Authorlbl.Text = "Author";
+            this.Authorlbl.Click += new System.EventHandler(this.Authorlbl_Click);
             // 
             // Booktitlelbl
             // 
@@ -358,6 +367,7 @@
             this.Booktitlelbl.Size = new System.Drawing.Size(113, 25);
             this.Booktitlelbl.TabIndex = 1;
             this.Booktitlelbl.Text = "Book Title";
+            this.Booktitlelbl.Click += new System.EventHandler(this.Booktitlelbl_Click);
             // 
             // pictureBox1
             // 
@@ -365,9 +375,10 @@
             this.pictureBox1.Location = new System.Drawing.Point(266, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(291, 121);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label3
             // 
@@ -380,6 +391,7 @@
             this.label3.Size = new System.Drawing.Size(81, 30);
             this.label3.TabIndex = 2;
             this.label3.Text = "Books";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel1
             // 
@@ -393,8 +405,9 @@
             this.panel1.Location = new System.Drawing.Point(21, 16);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(277, 647);
+            this.panel1.Size = new System.Drawing.Size(272, 813);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel6
             // 
@@ -407,6 +420,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(212, 46);
             this.panel6.TabIndex = 6;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // pictureBox6
             // 
@@ -419,6 +433,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox6.TabIndex = 2;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // label8
             // 
@@ -432,6 +447,7 @@
             this.label8.Size = new System.Drawing.Size(77, 23);
             this.label8.TabIndex = 2;
             this.label8.Text = "Logout";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -441,6 +457,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 20);
             this.label9.TabIndex = 0;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // panel5
             // 
@@ -453,6 +470,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(212, 50);
             this.panel5.TabIndex = 5;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // pictureBox5
             // 
@@ -465,6 +483,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox5.TabIndex = 2;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // label6
             // 
@@ -477,6 +496,7 @@
             this.label6.Size = new System.Drawing.Size(117, 23);
             this.label6.TabIndex = 2;
             this.label6.Text = "DashBoard";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -486,6 +506,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 20);
             this.label7.TabIndex = 0;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // panel4
             // 
@@ -498,6 +519,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(212, 52);
             this.panel4.TabIndex = 4;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // pictureBox4
             // 
@@ -510,18 +532,20 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(76, 7);
+            this.label4.Location = new System.Drawing.Point(97, 17);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 23);
             this.label4.TabIndex = 2;
             this.label4.Text = "Users";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -531,6 +555,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 20);
             this.label5.TabIndex = 0;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // panel3
             // 
@@ -543,6 +568,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(226, 46);
             this.panel3.TabIndex = 3;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label2
             // 
@@ -552,6 +578,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 0;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -564,6 +591,7 @@
             this.label1.Size = new System.Drawing.Size(153, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Book Shop";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 
@@ -575,12 +603,13 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // Books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 671);
+            this.ClientSize = new System.Drawing.Size(1205, 851);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
