@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Books));
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BookDGV = new System.Windows.Forms.DataGridView();
             this.RefreshBtn = new System.Windows.Forms.Button();
             this.CatCbSearchCb = new System.Windows.Forms.ComboBox();
-            this.BookDGV = new System.Windows.Forms.DataGridView();
             this.booklistlbl = new System.Windows.Forms.Label();
             this.EditBtn = new System.Windows.Forms.Button();
             this.ResetBtn = new System.Windows.Forms.Button();
@@ -98,9 +98,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.BookDGV);
             this.panel2.Controls.Add(this.RefreshBtn);
             this.panel2.Controls.Add(this.CatCbSearchCb);
-            this.panel2.Controls.Add(this.BookDGV);
             this.panel2.Controls.Add(this.booklistlbl);
             this.panel2.Controls.Add(this.EditBtn);
             this.panel2.Controls.Add(this.ResetBtn);
@@ -122,6 +122,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(846, 647);
             this.panel2.TabIndex = 3;
+            // 
+            // BookDGV
+            // 
+            this.BookDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BookDGV.Location = new System.Drawing.Point(18, 388);
+            this.BookDGV.Name = "BookDGV";
+            this.BookDGV.RowHeadersWidth = 51;
+            this.BookDGV.RowTemplate.Height = 29;
+            this.BookDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.BookDGV.Size = new System.Drawing.Size(792, 255);
+            this.BookDGV.TabIndex = 20;
+            this.BookDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BookDGV_CellContentClick);
             // 
             // RefreshBtn
             // 
@@ -159,19 +171,6 @@
             this.CatCbSearchCb.Text = "Filter by Category";
             this.CatCbSearchCb.SelectedIndexChanged += new System.EventHandler(this.CatCbSearchCb_SelectedIndexChanged);
             // 
-            // BookDGV
-            // 
-            this.BookDGV.BackgroundColor = System.Drawing.Color.White;
-            this.BookDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.BookDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BookDGV.Location = new System.Drawing.Point(18, 378);
-            this.BookDGV.Margin = new System.Windows.Forms.Padding(2);
-            this.BookDGV.Name = "BookDGV";
-            this.BookDGV.RowHeadersWidth = 62;
-            this.BookDGV.RowTemplate.Height = 33;
-            this.BookDGV.Size = new System.Drawing.Size(821, 266);
-            this.BookDGV.TabIndex = 17;
-            // 
             // booklistlbl
             // 
             this.booklistlbl.AutoSize = true;
@@ -200,6 +199,7 @@
             this.EditBtn.TabIndex = 15;
             this.EditBtn.Text = "Edit";
             this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // ResetBtn
             // 
@@ -216,6 +216,7 @@
             this.ResetBtn.TabIndex = 14;
             this.ResetBtn.Text = "Reset";
             this.ResetBtn.UseVisualStyleBackColor = false;
+            this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -232,6 +233,7 @@
             this.DeleteBtn.TabIndex = 13;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // SaveBtn
             // 
