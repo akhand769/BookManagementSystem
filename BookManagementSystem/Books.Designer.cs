@@ -138,6 +138,7 @@
             this.RefreshBtn.TabIndex = 19;
             this.RefreshBtn.Text = "Refresh";
             this.RefreshBtn.UseVisualStyleBackColor = false;
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // CatCbSearchCb
             // 
@@ -156,6 +157,7 @@
             this.CatCbSearchCb.Size = new System.Drawing.Size(185, 29);
             this.CatCbSearchCb.TabIndex = 18;
             this.CatCbSearchCb.Text = "Filter by Category";
+            this.CatCbSearchCb.SelectedIndexChanged += new System.EventHandler(this.CatCbSearchCb_SelectedIndexChanged);
             // 
             // BookDGV
             // 

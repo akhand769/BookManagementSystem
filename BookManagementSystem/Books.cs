@@ -49,6 +49,18 @@ namespace BookManagementSystem
             Con.Close();
 
         }
+        private void filter()
+        {
+            Con.Open();
+            string query = "select * from BookTbl where BCat='"+CatCbSearchCb.SelectedItem.ToString()+"'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            BookDGV.DataSource = ds.Tables[0];
+            Con.Close();
+
+        }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             if(BTitleTb.Text==""||BauthTb.Text == ""|| QtyTb.Text==""||PriceTb.Text==""||BCatCb.SelectedIndex==-1)
@@ -71,6 +83,16 @@ namespace BookManagementSystem
                 }
                 
             }
+        }
+
+        private void CatCbSearchCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filter();
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            populate();
         }
     }
 }
