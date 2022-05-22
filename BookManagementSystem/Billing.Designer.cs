@@ -47,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.usernamelbl = new System.Windows.Forms.Label();
             this.TotalLbl = new System.Windows.Forms.Label();
             this.BillDGV = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +62,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.usernamelbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BookDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -308,6 +308,17 @@
             this.panel2.Size = new System.Drawing.Size(980, 827);
             this.panel2.TabIndex = 5;
             // 
+            // usernamelbl
+            // 
+            this.usernamelbl.AutoSize = true;
+            this.usernamelbl.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.usernamelbl.Location = new System.Drawing.Point(125, 54);
+            this.usernamelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.usernamelbl.Name = "usernamelbl";
+            this.usernamelbl.Size = new System.Drawing.Size(130, 25);
+            this.usernamelbl.TabIndex = 28;
+            this.usernamelbl.Text = "User Name";
+            // 
             // TotalLbl
             // 
             this.TotalLbl.AutoSize = true;
@@ -317,6 +328,7 @@
             this.TotalLbl.Size = new System.Drawing.Size(75, 38);
             this.TotalLbl.TabIndex = 27;
             this.TotalLbl.Text = "Total";
+            this.TotalLbl.Click += new System.EventHandler(this.TotalLbl_Click);
             // 
             // BillDGV
             // 
@@ -439,17 +451,6 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             this.printPreviewDialog1.Load += new System.EventHandler(this.printPreviewDialog1_Load);
-            // 
-            // usernamelbl
-            // 
-            this.usernamelbl.AutoSize = true;
-            this.usernamelbl.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.usernamelbl.Location = new System.Drawing.Point(125, 54);
-            this.usernamelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.usernamelbl.Name = "usernamelbl";
-            this.usernamelbl.Size = new System.Drawing.Size(130, 25);
-            this.usernamelbl.TabIndex = 28;
-            this.usernamelbl.Text = "User Name";
             // 
             // Billing
             // 

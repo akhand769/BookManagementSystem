@@ -286,7 +286,9 @@ namespace BookManagementSystem
 
         private void label6_Click(object sender, EventArgs e)
         {
-
+            Dashboard Obj = new Dashboard();
+            Obj.Show();
+            this.Hide();
         }
 
         private void label7_Click(object sender, EventArgs e)

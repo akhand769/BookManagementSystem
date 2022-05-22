@@ -11,8 +11,11 @@ using System.Windows.Forms;
 
 namespace BookManagementSystem
 {
+    
     public partial class Billing : Form
     {
+        int n = 0;
+        static int GrndTotal = 0;
         public Billing()
         {
             InitializeComponent();
@@ -77,7 +80,7 @@ namespace BookManagementSystem
 
             
         }
-        int n = 0,GrndTotal=0;
+        
         private void SaveBtn_Click(object sender, EventArgs e)
         {
            
@@ -97,9 +100,11 @@ namespace BookManagementSystem
                 newRow.Cells[4].Value = total;
                 BillDGV.Rows.Add(newRow);
                 n++;
-                UpdateBook();
                 GrndTotal = GrndTotal + total;
-                TotalLbl.Text = "Rs  "+GrndTotal.ToString();
+                int p = GrndTotal;
+                TotalLbl.Text = "Rs  " + p.ToString();
+                UpdateBook();
+                
                 
             }
         }
@@ -122,13 +127,16 @@ namespace BookManagementSystem
                 try
                 {
                     Con.Open();
-                    string query = "insert into BillTbl values('" +usernamelbl.Text + "','" + ClientTb.Text + "','" +GrndTotal+ "','" + QtyTb.Text + "')";
+                    int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
+                    GrndTotal = GrndTotal + total;
+                    MessageBox.Show(GrndTotal.ToString());
+
+                    //int total = Convert.ToInt32(TotalLbl.Text);
+                    string query = "insert into BillTbl values('" +BNameTb.Text + "','" + ClientTb.Text + "','" +GrndTotal+"' )";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Bill Saved Successfully");
                     Con.Close();
-                    //populate();
-                    //Reset();
                 }
                 catch (Exception Ex)
                 {
@@ -142,6 +150,11 @@ namespace BookManagementSystem
         private void Billing_Load(object sender, EventArgs e)
         {
             usernamelbl.Text = Login.UserName;
+
+        }
+
+        private void TotalLbl_Click(object sender, EventArgs e)
+        {
 
         }
 

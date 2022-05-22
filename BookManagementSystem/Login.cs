@@ -39,7 +39,7 @@ namespace BookManagementSystem
             if (dt.Rows[0][0].ToString()=="1")
             {
                 UserName = UnameTb.Text;
-                Books obj = new Books();
+                Billing obj = new Billing();
                 obj.Show();
                 this.Hide();
                 Con.Close();
@@ -49,6 +49,13 @@ namespace BookManagementSystem
                 MessageBox.Show("Wrong Username Or Password");
             }
             Con.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            AdminLogin Obj = new AdminLogin();
+            Obj.Show();
+            this.Hide();
         }
     }
 }

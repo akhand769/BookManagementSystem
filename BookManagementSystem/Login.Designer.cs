@@ -128,6 +128,7 @@
             this.label4.Size = new System.Drawing.Size(60, 23);
             this.label4.TabIndex = 7;
             this.label4.Text = "Admin";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button1
             // 
@@ -175,6 +176,7 @@
             this.UPassTb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UPassTb.Location = new System.Drawing.Point(166, 280);
             this.UPassTb.Name = "UPassTb";
+            this.UPassTb.PasswordChar = '*';
             this.UPassTb.Size = new System.Drawing.Size(317, 34);
             this.UPassTb.TabIndex = 2;
             // 
