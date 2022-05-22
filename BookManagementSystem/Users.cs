@@ -141,5 +141,17 @@ namespace BookManagementSystem
 
             }
         }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Books Obj = new Books();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Billing));
             this.BookDGV = new System.Windows.Forms.DataGridView();
             this.booklistlbl = new System.Windows.Forms.Label();
-            this.EditBtn = new System.Windows.Forms.Button();
+            this.PrintBtn = new System.Windows.Forms.Button();
             this.ResetBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.QtyTb = new System.Windows.Forms.TextBox();
@@ -59,6 +59,9 @@
             this.ClientTb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.usernamelbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BookDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -95,22 +98,23 @@
             this.booklistlbl.TabIndex = 16;
             this.booklistlbl.Text = "Book List";
             // 
-            // EditBtn
+            // PrintBtn
             // 
-            this.EditBtn.AutoEllipsis = true;
-            this.EditBtn.BackColor = System.Drawing.Color.Khaki;
-            this.EditBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.EditBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EditBtn.ForeColor = System.Drawing.Color.Black;
-            this.EditBtn.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.EditBtn.Location = new System.Drawing.Point(747, 693);
-            this.EditBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.EditBtn.Name = "EditBtn";
-            this.EditBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EditBtn.Size = new System.Drawing.Size(138, 30);
-            this.EditBtn.TabIndex = 15;
-            this.EditBtn.Text = "Print";
-            this.EditBtn.UseVisualStyleBackColor = false;
+            this.PrintBtn.AutoEllipsis = true;
+            this.PrintBtn.BackColor = System.Drawing.Color.Khaki;
+            this.PrintBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PrintBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PrintBtn.ForeColor = System.Drawing.Color.Black;
+            this.PrintBtn.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.PrintBtn.Location = new System.Drawing.Point(747, 693);
+            this.PrintBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.PrintBtn.Name = "PrintBtn";
+            this.PrintBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PrintBtn.Size = new System.Drawing.Size(138, 30);
+            this.PrintBtn.TabIndex = 15;
+            this.PrintBtn.Text = "Print";
+            this.PrintBtn.UseVisualStyleBackColor = false;
+            this.PrintBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // ResetBtn
             // 
@@ -280,6 +284,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.usernamelbl);
             this.panel2.Controls.Add(this.TotalLbl);
             this.panel2.Controls.Add(this.BillDGV);
             this.panel2.Controls.Add(this.label4);
@@ -289,7 +294,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.BookDGV);
             this.panel2.Controls.Add(this.booklistlbl);
-            this.panel2.Controls.Add(this.EditBtn);
+            this.panel2.Controls.Add(this.PrintBtn);
             this.panel2.Controls.Add(this.ResetBtn);
             this.panel2.Controls.Add(this.SaveBtn);
             this.panel2.Controls.Add(this.QtyTb);
@@ -419,6 +424,33 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Client Name";
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            this.printPreviewDialog1.Load += new System.EventHandler(this.printPreviewDialog1_Load);
+            // 
+            // usernamelbl
+            // 
+            this.usernamelbl.AutoSize = true;
+            this.usernamelbl.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.usernamelbl.Location = new System.Drawing.Point(125, 54);
+            this.usernamelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.usernamelbl.Name = "usernamelbl";
+            this.usernamelbl.Size = new System.Drawing.Size(130, 25);
+            this.usernamelbl.TabIndex = 28;
+            this.usernamelbl.Text = "User Name";
+            // 
             // Billing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -430,6 +462,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Billing";
             this.Text = "Billing";
+            this.Load += new System.EventHandler(this.Billing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BookDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -448,7 +481,7 @@
         #endregion
         private DataGridView BookDGV;
         private Label booklistlbl;
-        private Button EditBtn;
+        private Button PrintBtn;
         private Button ResetBtn;
         private Button SaveBtn;
         private TextBox QtyTb;
@@ -476,5 +509,8 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private PrintPreviewDialog printPreviewDialog1;
+        private Label usernamelbl;
     }
 }

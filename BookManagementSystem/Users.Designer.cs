@@ -115,6 +115,7 @@
             this.label3.Size = new System.Drawing.Size(81, 30);
             this.label3.TabIndex = 2;
             this.label3.Text = "Books";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -422,6 +423,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(212, 46);
             this.panel6.TabIndex = 6;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // panel1
             // 

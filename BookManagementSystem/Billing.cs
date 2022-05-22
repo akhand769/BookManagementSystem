@@ -21,7 +21,9 @@ namespace BookManagementSystem
 
         private void label8_Click(object sender, EventArgs e)
         {
-
+            Login Obj = new Login();
+            Obj.Show();
+            this.Hide();
         }
         int key = 0,stock=0;
         private void BookDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,6 +103,80 @@ namespace BookManagementSystem
                 
             }
         }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            
+            if (ClientTb.Text == "" || BNameTb.Text == "" )
+            {
+                MessageBox.Show("Select Client Name");
+            }
+            else
+            {
+                printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pprnm", 285, 600);
+                if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    printDocument1.Print();
+                }
+
+                try
+                {
+                    Con.Open();
+                    string query = "insert into BillTbl values('" +usernamelbl.Text + "','" + ClientTb.Text + "','" +GrndTotal+ "','" + QtyTb.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Bill Saved Successfully");
+                    Con.Close();
+                    //populate();
+                    //Reset();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+
+            }
+        }
+        int prodid, prodqty, prodprice, tottal, pos = 60;
+
+        private void Billing_Load(object sender, EventArgs e)
+        {
+            usernamelbl.Text = Login.UserName;
+
+        }
+
+        string prodname;
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString("Book Shop", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Red, new Point(80));
+            e.Graphics.DrawString("ID PRODUCT PRICE QUANTITY TOTAL", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Red, new Point(26, 40));
+            foreach(DataGridViewRow row in BillDGV.Rows)
+            {
+                prodid = Convert.ToInt32(row.Cells["Column1"].Value);
+                prodname = "" + row.Cells["Column2"].Value;
+                prodprice = Convert.ToInt32(row.Cells["Column3"].Value);
+                prodqty = Convert.ToInt32(row.Cells["Column4"].Value);
+                tottal = Convert.ToInt32(row.Cells["Column5"].Value);
+                e.Graphics.DrawString("" + prodid, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(26, pos));
+                e.Graphics.DrawString("" + prodname, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(45, pos));
+                e.Graphics.DrawString("" + prodprice, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(120, pos));
+                e.Graphics.DrawString("" + prodqty, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(170, pos));
+                e.Graphics.DrawString("" + tottal, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(235, pos));
+            }
+            e.Graphics.DrawString("Grand Total : RS" + GrndTotal, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Crimson, new Point(60, pos + 50));
+            e.Graphics.DrawString("**********BookStore**********" , new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Crimson, new Point(40, pos + 85));
+            BillDGV.Rows.Clear();
+            BillDGV.Refresh();
+            pos = 100;
+            GrndTotal = 0;
+
+        }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void Reset()
         {
             BNameTb.Text = "";

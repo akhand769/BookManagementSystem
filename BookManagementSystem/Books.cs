@@ -264,7 +264,9 @@ namespace BookManagementSystem
 
         private void label8_Click(object sender, EventArgs e)
         {
-
+            Login Obj = new Login();
+            Obj.Show();
+            this.Hide();
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -294,7 +296,7 @@ namespace BookManagementSystem
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
-
+           
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -304,7 +306,9 @@ namespace BookManagementSystem
 
         private void label4_Click(object sender, EventArgs e)
         {
-
+            Users Obj = new Users();
+            Obj.Show();
+            this.Hide();
         }
 
         private void label5_Click(object sender, EventArgs e)
