@@ -37,5 +37,10 @@ namespace BookManagementSystem
             Obj.Show();
             this.Hide();
         }
+
+        private void UPassTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
