@@ -337,5 +337,10 @@ namespace BookManagementSystem
         {
 
         }
+
+        private void Books_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
