@@ -10,30 +10,30 @@ using System.Windows.Forms;
 
 namespace BookManagementSystem
 {
-    public partial class AdminLogin : Form
+    public partial class ChooseMode : Form
     {
-        public AdminLogin()
+        public ChooseMode()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(UPassTb.Text=="Password")
-            {
-                Books Obj = new Books();
-                Obj.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Wrong Password - Contact the Admin");
-            }
+            AdminLogin Obj = new AdminLogin();
+            Obj.Show();
+            this.Hide();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            ChooseMode Obj = new ChooseMode();
+            Login Obj = new Login();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            LoginUser Obj = new LoginUser();
             Obj.Show();
             this.Hide();
         }

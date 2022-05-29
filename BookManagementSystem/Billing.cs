@@ -129,7 +129,6 @@ namespace BookManagementSystem
                     Con.Open();
                     int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
                     GrndTotal = GrndTotal + total;
-                    MessageBox.Show(GrndTotal.ToString());
 
                     //int total = Convert.ToInt32(TotalLbl.Text);
                     string query = "insert into BillTbl values('" +BNameTb.Text + "','" + ClientTb.Text + "','" +GrndTotal+"' )";
@@ -159,6 +158,11 @@ namespace BookManagementSystem
         }
 
         private void QtyTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BillDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

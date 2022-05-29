@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace BookManagementSystem
 {
@@ -16,17 +17,39 @@ namespace BookManagementSystem
         {
             InitializeComponent();
         }
-
+        public static string UserName = "";
         private void label4_Click(object sender, EventArgs e)
         {
-            Login Obj = new Login();
+            ChooseMode Obj = new ChooseMode();
             Obj.Show();
             this.Hide();
         }
-
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\akhan\Documents\BookShopDb.mdf;Integrated Security=True;Connect Timeout=30");
         private void button1_Click(object sender, EventArgs e)
         {
-            BookOrder Obj = new BookOrder();
+            Con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from OnlineUser where Name ='" + Uname.Text + "' and Password='" + UPass.Text + "'", Con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                UserName = Uname.Text;
+                BookOrder Obj = new BookOrder();
+                Obj.Show();
+                this.Hide();
+                Con.Close();
+            }
+            else
+            {
+                MessageBox.Show("Wrong Username Or Password");
+            }
+            Con.Close();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RegisterOnlineUser Obj = new RegisterOnlineUser();
             Obj.Show();
             this.Hide();
         }

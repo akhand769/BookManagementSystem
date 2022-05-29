@@ -34,7 +34,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,7 +41,7 @@
             this.UPassTb = new System.Windows.Forms.TextBox();
             this.UnameTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,9 +94,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label3);
@@ -109,6 +107,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(501, 451);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label5
             // 
@@ -120,17 +119,6 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "X";
             this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(115, 411);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 23);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Admin";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button1
             // 
@@ -200,16 +188,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "BOOK SHOP";
             // 
-            // label9
+            // label4
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(289, 411);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 23);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Order Books";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(191, 406);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 25);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Cancel";
             // 
             // Login
             // 
@@ -242,12 +229,11 @@
         private TextBox UnameTb;
         private Label label1;
         private Label label5;
-        private Label label4;
         private Button button1;
         private PictureBox pictureBox1;
         private Label label8;
         private Label label7;
         private Label label6;
-        private Label label9;
+        private Label label4;
     }
 }

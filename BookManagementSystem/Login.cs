@@ -64,5 +64,12 @@ namespace BookManagementSystem
             Obj.Show();
             this.Hide();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            ChooseMode Obj= new ChooseMode();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }

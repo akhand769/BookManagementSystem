@@ -351,6 +351,7 @@
             this.BillDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.BillDGV.Size = new System.Drawing.Size(579, 339);
             this.BillDGV.TabIndex = 26;
+            this.BillDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BillDGV_CellContentClick);
             // 
             // Column1
             // 

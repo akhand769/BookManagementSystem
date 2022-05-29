@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.UPassTb = new System.Windows.Forms.TextBox();
-            this.UnameTb = new System.Windows.Forms.TextBox();
+            this.UPass = new System.Windows.Forms.TextBox();
+            this.Uname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,19 +51,31 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.UPassTb);
-            this.panel2.Controls.Add(this.UnameTb);
+            this.panel2.Controls.Add(this.UPass);
+            this.panel2.Controls.Add(this.Uname);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(276, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(501, 451);
             this.panel2.TabIndex = 3;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(83, 344);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 42);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Register";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
@@ -88,7 +101,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(177, 344);
+            this.button1.Location = new System.Drawing.Point(318, 344);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 42);
             this.button1.TabIndex = 6;
@@ -126,22 +139,22 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "USER NAME";
             // 
-            // UPassTb
+            // UPass
             // 
-            this.UPassTb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UPassTb.Location = new System.Drawing.Point(166, 280);
-            this.UPassTb.Name = "UPassTb";
-            this.UPassTb.PasswordChar = '*';
-            this.UPassTb.Size = new System.Drawing.Size(317, 34);
-            this.UPassTb.TabIndex = 2;
+            this.UPass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UPass.Location = new System.Drawing.Point(166, 280);
+            this.UPass.Name = "UPass";
+            this.UPass.PasswordChar = '*';
+            this.UPass.Size = new System.Drawing.Size(317, 34);
+            this.UPass.TabIndex = 2;
             // 
-            // UnameTb
+            // Uname
             // 
-            this.UnameTb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UnameTb.Location = new System.Drawing.Point(166, 210);
-            this.UnameTb.Name = "UnameTb";
-            this.UnameTb.Size = new System.Drawing.Size(317, 34);
-            this.UnameTb.TabIndex = 1;
+            this.Uname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Uname.Location = new System.Drawing.Point(166, 210);
+            this.Uname.Name = "Uname";
+            this.Uname.Size = new System.Drawing.Size(317, 34);
+            this.Uname.TabIndex = 1;
             // 
             // label1
             // 
@@ -226,13 +239,14 @@
         private PictureBox pictureBox1;
         private Label label3;
         private Label label2;
-        private TextBox UPassTb;
-        private TextBox UnameTb;
+        private TextBox UPass;
+        private TextBox Uname;
         private Label label1;
         private Panel panel1;
         private Label label8;
         private Label label7;
         private Label label6;
         private Label label4;
+        private Button button2;
     }
 }

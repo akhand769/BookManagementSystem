@@ -26,7 +26,7 @@ namespace BookManagementSystem
             {
                 Myprogress.Value = 0;
                 timer1.Stop();
-                Login log = new Login();
+                ChooseMode log = new ChooseMode();
                 log.Show();
                 this.Hide();
             }

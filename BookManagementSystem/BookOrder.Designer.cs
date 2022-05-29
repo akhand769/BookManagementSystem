@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookOrder));
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.label4 = new System.Windows.Forms.Label();
             this.PriceTb = new System.Windows.Forms.TextBox();
-            this.ClientTb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +58,8 @@
             this.BNameTb = new System.Windows.Forms.TextBox();
             this.Authorlbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.BillDGV)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -72,17 +70,6 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Document = this.printDocument1;
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -90,48 +77,29 @@
             this.label4.Location = new System.Drawing.Point(650, 110);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 25);
+            this.label4.Size = new System.Drawing.Size(114, 25);
             this.label4.TabIndex = 25;
-            this.label4.Text = "Book List";
+            this.label4.Text = "Your Cart";
             // 
             // PriceTb
             // 
             this.PriceTb.Enabled = false;
-            this.PriceTb.Location = new System.Drawing.Point(229, 268);
+            this.PriceTb.Location = new System.Drawing.Point(138, 268);
             this.PriceTb.Margin = new System.Windows.Forms.Padding(2);
             this.PriceTb.Name = "PriceTb";
             this.PriceTb.Size = new System.Drawing.Size(128, 27);
             this.PriceTb.TabIndex = 24;
             // 
-            // ClientTb
-            // 
-            this.ClientTb.Location = new System.Drawing.Point(9, 268);
-            this.ClientTb.Margin = new System.Windows.Forms.Padding(2);
-            this.ClientTb.Name = "ClientTb";
-            this.ClientTb.Size = new System.Drawing.Size(216, 27);
-            this.ClientTb.TabIndex = 23;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(256, 245);
+            this.label3.Location = new System.Drawing.Point(173, 245);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 21);
             this.label3.TabIndex = 22;
             this.label3.Text = "Price";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(48, 245);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 21);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Client Name";
             // 
             // Column5
             // 
@@ -172,7 +140,7 @@
             // 
             this.usernamelbl.AutoSize = true;
             this.usernamelbl.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.usernamelbl.Location = new System.Drawing.Point(125, 54);
+            this.usernamelbl.Location = new System.Drawing.Point(96, 66);
             this.usernamelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.usernamelbl.Name = "usernamelbl";
             this.usernamelbl.Size = new System.Drawing.Size(130, 25);
@@ -209,6 +177,7 @@
             this.BillDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.BillDGV.Size = new System.Drawing.Size(579, 339);
             this.BillDGV.TabIndex = 26;
+            this.BillDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BillDGV_CellContentClick);
             // 
             // panel6
             // 
@@ -318,19 +287,20 @@
             this.BookDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BookDGV.CausesValidation = false;
             this.BookDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BookDGV.Location = new System.Drawing.Point(10, 494);
+            this.BookDGV.Location = new System.Drawing.Point(10, 514);
             this.BookDGV.Name = "BookDGV";
             this.BookDGV.RowHeadersWidth = 51;
             this.BookDGV.RowTemplate.Height = 29;
             this.BookDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.BookDGV.Size = new System.Drawing.Size(712, 330);
+            this.BookDGV.Size = new System.Drawing.Size(712, 310);
             this.BookDGV.TabIndex = 20;
+            this.BookDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BookDGV_CellContentClick_1);
             // 
             // booklistlbl
             // 
             this.booklistlbl.AutoSize = true;
             this.booklistlbl.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.booklistlbl.Location = new System.Drawing.Point(229, 428);
+            this.booklistlbl.Location = new System.Drawing.Point(256, 442);
             this.booklistlbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.booklistlbl.Name = "booklistlbl";
             this.booklistlbl.Size = new System.Drawing.Size(101, 25);
@@ -351,8 +321,9 @@
             this.PrintBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.PrintBtn.Size = new System.Drawing.Size(138, 30);
             this.PrintBtn.TabIndex = 15;
-            this.PrintBtn.Text = "Print";
+            this.PrintBtn.Text = "Place Order";
             this.PrintBtn.UseVisualStyleBackColor = false;
+            this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
             // 
             // ResetBtn
             // 
@@ -362,13 +333,14 @@
             this.ResetBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ResetBtn.ForeColor = System.Drawing.Color.Black;
             this.ResetBtn.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.ResetBtn.Location = new System.Drawing.Point(142, 326);
+            this.ResetBtn.Location = new System.Drawing.Point(208, 326);
             this.ResetBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ResetBtn.Name = "ResetBtn";
             this.ResetBtn.Size = new System.Drawing.Size(111, 31);
             this.ResetBtn.TabIndex = 14;
             this.ResetBtn.Text = "Reset";
             this.ResetBtn.UseVisualStyleBackColor = false;
+            this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
             // SaveBtn
             // 
@@ -381,10 +353,11 @@
             this.SaveBtn.Location = new System.Drawing.Point(18, 326);
             this.SaveBtn.Margin = new System.Windows.Forms.Padding(2);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(118, 31);
+            this.SaveBtn.Size = new System.Drawing.Size(150, 31);
             this.SaveBtn.TabIndex = 12;
-            this.SaveBtn.Text = "Add To Bill";
+            this.SaveBtn.Text = "Add To Cart";
             this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // QtyTb
             // 
@@ -422,9 +395,7 @@
             this.panel2.Controls.Add(this.BillDGV);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.PriceTb);
-            this.panel2.Controls.Add(this.ClientTb);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.BookDGV);
             this.panel2.Controls.Add(this.booklistlbl);
             this.panel2.Controls.Add(this.PrintBtn);
@@ -440,6 +411,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(980, 827);
             this.panel2.TabIndex = 7;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // BookOrder
             // 
@@ -468,14 +449,9 @@
         }
 
         #endregion
-
-        private PrintPreviewDialog printPreviewDialog1;
-        private System.Drawing.Printing.PrintDocument printDocument1;
         private Label label4;
         private TextBox PriceTb;
-        private TextBox ClientTb;
         private Label label3;
-        private Label label2;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column3;
@@ -502,5 +478,7 @@
         private TextBox BNameTb;
         private Label Authorlbl;
         private Panel panel2;
+        private PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
