@@ -57,5 +57,12 @@ namespace BookManagementSystem
             Obj.Show();
             this.Hide();
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            LoginUser Obj = new LoginUser();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }

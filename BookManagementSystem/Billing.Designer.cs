@@ -157,6 +157,7 @@
             this.QtyTb.Name = "QtyTb";
             this.QtyTb.Size = new System.Drawing.Size(128, 27);
             this.QtyTb.TabIndex = 4;
+            this.QtyTb.TextChanged += new System.EventHandler(this.QtyTb_TextChanged);
             // 
             // BNameTb
             // 

@@ -158,6 +158,11 @@ namespace BookManagementSystem
 
         }
 
+        private void QtyTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         string prodname;
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -172,15 +177,17 @@ namespace BookManagementSystem
                 tottal = Convert.ToInt32(row.Cells["Column5"].Value);
                 e.Graphics.DrawString("" + prodid, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(26, pos));
                 e.Graphics.DrawString("" + prodname, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(45, pos));
-                e.Graphics.DrawString("" + prodprice, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(120, pos));
-                e.Graphics.DrawString("" + prodqty, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(170, pos));
-                e.Graphics.DrawString("" + tottal, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(235, pos));
+                e.Graphics.DrawString("" + prodprice, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(120, pos), new StringFormat());
+                e.Graphics.DrawString("" + prodqty, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(170, pos), new StringFormat());
+                e.Graphics.DrawString("" + tottal, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(235, pos), new StringFormat());
+                pos += 25;
+
             }
             e.Graphics.DrawString("Grand Total : RS" + GrndTotal, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Crimson, new Point(60, pos + 50));
             e.Graphics.DrawString("**********BookStore**********" , new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Crimson, new Point(40, pos + 85));
             BillDGV.Rows.Clear();
             BillDGV.Refresh();
-            pos = 100;
+           
             GrndTotal = 0;
 
         }

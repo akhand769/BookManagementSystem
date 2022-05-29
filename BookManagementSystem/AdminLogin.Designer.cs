@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.UPassTb = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,25 +53,16 @@
             this.panel1.Size = new System.Drawing.Size(776, 418);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // label2
             // 
-            this.pictureBox1.Image = global::BookManagementSystem.Properties.Resources._50_505031_log_book_png_png_clip_art_transparent_books;
-            this.pictureBox1.Location = new System.Drawing.Point(320, 75);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 86);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(281, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 41);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Admin Login";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(320, 344);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 28);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Cancel";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button1
             // 
@@ -103,16 +94,25 @@
             this.UPassTb.Size = new System.Drawing.Size(317, 34);
             this.UPassTb.TabIndex = 8;
             // 
-            // label2
+            // pictureBox1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(320, 344);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 28);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Cancel";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.pictureBox1.Image = global::BookManagementSystem.Properties.Resources._50_505031_log_book_png_png_clip_art_transparent_books;
+            this.pictureBox1.Location = new System.Drawing.Point(320, 75);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(106, 86);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(281, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 41);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Admin Login";
             // 
             // AdminLogin
             // 
@@ -124,7 +124,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminLogin";
+            this.Text = "  ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
