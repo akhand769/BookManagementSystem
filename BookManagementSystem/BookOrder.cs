@@ -37,8 +37,7 @@ namespace BookManagementSystem
                 key = Convert.ToInt32(BookDGV.CurrentRow.Cells[0].Value.ToString());
                 stock = Convert.ToInt32(BookDGV.CurrentRow.Cells[4].Value.ToString());
             }
-        }
-        
+        }   
         private void populate()
         {
             Con.Open();
@@ -71,8 +70,6 @@ namespace BookManagementSystem
             {
                 MessageBox.Show(Ex.Message);
             }
-
-
         }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
@@ -97,12 +94,8 @@ namespace BookManagementSystem
                 int p = GrndTotal;
                 TotalLbl.Text = "Rs  " + p.ToString();
                 UpdateBook();
-
-
             }
-        }
-        
-        
+        } 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
             if (BNameTb.Text == "")
@@ -111,12 +104,9 @@ namespace BookManagementSystem
             }
             else
             {
-                printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pprnum", 265, 600);
-                MessageBox.Show("INI");
-                
+                printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pprnm", 285, 600);
                 if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("INI");
                     printDocument1.Print();
                 }
 
@@ -125,12 +115,11 @@ namespace BookManagementSystem
                     Con.Open();
                     int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
                     GrndTotal = GrndTotal + total;
-
-                    //int total = Convert.ToInt32(TotalLbl.Text);
-                    string query = "insert into BillTbl values('" + BNameTb.Text + "','" + LoginUser.UserName + "','" + GrndTotal + "' )";
+                    String str= DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss");
+                    string query = "insert into BillTbl values('" + BNameTb.Text + "','" + LoginUser.UserName + "','" + GrndTotal + "','" + str+ "' )";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Bill Saved Successfully");
+                    MessageBox.Show("Order Placed Successfully");
                     Con.Close();
                 }
                 catch (Exception Ex)
@@ -140,28 +129,37 @@ namespace BookManagementSystem
 
             }
         }
-        int prodid, prodqty, prodprice, tottal, pos = 60;
-        string prodname;
-        private void BillDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
         {
 
         }
 
-       
+        private void BillDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }   
         private void BookOrder_Load(object sender, EventArgs e)
         {
             usernamelbl.Text = Login.UserName;
 
         }
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        int prodid, prodqty, prodprice, tottal, pos = 60;
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            LoginUser Obj = new LoginUser();
+            Obj.Show();
+            this.Hide();
+        }
+        string prodname;
+        private void printDocument1_PrintPage_1(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             e.Graphics.DrawString("Book Shop", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Red, new Point(80));
             e.Graphics.DrawString("ID PRODUCT PRICE QUANTITY TOTAL", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Red, new Point(26, 40));
             foreach (DataGridViewRow row in BillDGV.Rows)
             {
                 prodid = Convert.ToInt32(row.Cells["Column1"].Value);
-                string str = row.Cells["Column1"].Value.ToString();
-                MessageBox.Show(str);
+
                 prodname = "" + row.Cells["Column2"].Value;
                 prodprice = Convert.ToInt32(row.Cells["Column3"].Value);
                 prodqty = Convert.ToInt32(row.Cells["Column4"].Value);
@@ -174,19 +172,16 @@ namespace BookManagementSystem
                 pos += 25;
 
             }
-            e.Graphics.DrawString("Grand Total : RS" + GrndTotal, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Crimson, new Point(60, pos + 50));
+            e.Graphics.DrawString("Grand Total : RS  " + GrndTotal, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Crimson, new Point(60, pos + 50));
             e.Graphics.DrawString("**********BookStore**********", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Crimson, new Point(40, pos + 85));
             BillDGV.Rows.Clear();
             BillDGV.Refresh();
-
             GrndTotal = 0;
-
         }
         private void Reset()
         {
             BNameTb.Text = "";
             QtyTb.Text = "";
-
             PriceTb.Text = "";
         }
         private void ResetBtn_Click(object sender, EventArgs e)

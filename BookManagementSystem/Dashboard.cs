@@ -61,5 +61,12 @@ namespace BookManagementSystem
             Obj.Show();
             this.Hide();
         }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            PrintOrder Obj = new PrintOrder();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }

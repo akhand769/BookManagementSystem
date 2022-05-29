@@ -129,9 +129,8 @@ namespace BookManagementSystem
                     Con.Open();
                     int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
                     GrndTotal = GrndTotal + total;
-
-                    //int total = Convert.ToInt32(TotalLbl.Text);
-                    string query = "insert into BillTbl values('" +BNameTb.Text + "','" + ClientTb.Text + "','" +GrndTotal+"' )";
+                    String str = DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss");
+                    string query = "insert into BillTbl values('" +BNameTb.Text + "','" + ClientTb.Text + "','" +GrndTotal+ "','" + str + "' )";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Bill Saved Successfully");
