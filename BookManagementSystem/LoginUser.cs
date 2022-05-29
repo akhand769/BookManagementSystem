@@ -16,5 +16,19 @@ namespace BookManagementSystem
         {
             InitializeComponent();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Login Obj = new Login();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BookOrder Obj = new BookOrder();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }
