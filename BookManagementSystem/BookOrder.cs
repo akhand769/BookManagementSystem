@@ -93,7 +93,7 @@ namespace BookManagementSystem
                 GrndTotal = GrndTotal + total;
                 int p = GrndTotal;
                 TotalLbl.Text = "Rs  " + p.ToString();
-                UpdateBook();
+               
             }
         } 
         private void PrintBtn_Click(object sender, EventArgs e)
@@ -145,6 +145,11 @@ namespace BookManagementSystem
         }
         int prodid, prodqty, prodprice, tottal, pos = 60;
 
+        private void TotalLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void label8_Click(object sender, EventArgs e)
         {
             LoginUser Obj = new LoginUser();
@@ -176,6 +181,9 @@ namespace BookManagementSystem
             e.Graphics.DrawString("**********BookStore**********", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Crimson, new Point(40, pos + 85));
             BillDGV.Rows.Clear();
             BillDGV.Refresh();
+            Reset();
+            TotalLbl.Text = "Total";
+            UpdateBook();
             GrndTotal = 0;
         }
         private void Reset()
@@ -186,6 +194,10 @@ namespace BookManagementSystem
         }
         private void ResetBtn_Click(object sender, EventArgs e)
         {
+            BillDGV.Rows.Clear();
+            BillDGV.Refresh();
+            TotalLbl.Text = "Total";
+            GrndTotal = 0;
             Reset();
         }
     }

@@ -127,9 +127,11 @@
             // 
             // BookDGV
             // 
+            this.BookDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.BookDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BookDGV.Location = new System.Drawing.Point(18, 388);
             this.BookDGV.Name = "BookDGV";
+            this.BookDGV.ReadOnly = true;
             this.BookDGV.RowHeadersWidth = 51;
             this.BookDGV.RowTemplate.Height = 29;
             this.BookDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

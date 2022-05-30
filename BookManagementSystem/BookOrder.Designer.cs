@@ -106,35 +106,35 @@
             this.Column5.HeaderText = "Total";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 80;
+            this.Column5.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Quantity";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 80;
+            this.Column4.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Price";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 80;
+            this.Column3.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Books";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 155;
+            this.Column2.ReadOnly = true;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "ID";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            this.Column1.ReadOnly = true;
             // 
             // usernamelbl
             // 
@@ -156,9 +156,11 @@
             this.TotalLbl.Size = new System.Drawing.Size(75, 38);
             this.TotalLbl.TabIndex = 27;
             this.TotalLbl.Text = "Total";
+            this.TotalLbl.Click += new System.EventHandler(this.TotalLbl_Click);
             // 
             // BillDGV
             // 
+            this.BillDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.BillDGV.BackgroundColor = System.Drawing.Color.White;
             this.BillDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BillDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -172,6 +174,7 @@
             this.BillDGV.GridColor = System.Drawing.Color.White;
             this.BillDGV.Location = new System.Drawing.Point(389, 149);
             this.BillDGV.Name = "BillDGV";
+            this.BillDGV.ReadOnly = true;
             this.BillDGV.RowHeadersWidth = 51;
             this.BillDGV.RowTemplate.Height = 29;
             this.BillDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -284,12 +287,14 @@
             // 
             // BookDGV
             // 
+            this.BookDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.BookDGV.BackgroundColor = System.Drawing.Color.White;
             this.BookDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BookDGV.CausesValidation = false;
             this.BookDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BookDGV.Location = new System.Drawing.Point(10, 514);
             this.BookDGV.Name = "BookDGV";
+            this.BookDGV.ReadOnly = true;
             this.BookDGV.RowHeadersWidth = 51;
             this.BookDGV.RowTemplate.Height = 29;
             this.BookDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

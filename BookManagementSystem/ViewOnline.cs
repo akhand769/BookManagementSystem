@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace BookManagementSystem
 {
-    public partial class PrintOrder : Form
+    public partial class ViewOnline : Form
     {
-        public PrintOrder()
+        public ViewOnline()
         {
             InitializeComponent();
             populate();
@@ -22,7 +22,7 @@ namespace BookManagementSystem
         private void populate()
         {
             Con.Open();
-            string query = "select * from BillTbl";
+            string query = "select * from OnlineUser";
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
@@ -33,8 +33,7 @@ namespace BookManagementSystem
             Con.Close();
 
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void BookDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -44,16 +43,6 @@ namespace BookManagementSystem
             Dashboard Obj = new Dashboard();
             Obj.Show();
             this.Hide();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

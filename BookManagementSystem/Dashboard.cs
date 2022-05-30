@@ -24,7 +24,7 @@ namespace BookManagementSystem
             SqlDataAdapter sda = new SqlDataAdapter("select sum(BQty) from BookTbl", Con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            bookstocklbl.Text = dt.Rows[0][0].ToString();
+            bstlbl.Text = dt.Rows[0][0].ToString();
             SqlDataAdapter sda1 = new SqlDataAdapter("select sum(Amount) from BillTbl", Con);
             DataTable dt1 = new DataTable();
             sda1.Fill(dt1);
@@ -67,6 +67,18 @@ namespace BookManagementSystem
             PrintOrder Obj = new PrintOrder();
             Obj.Show();
             this.Hide();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            ViewOnline Obj = new ViewOnline();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void amountlbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
