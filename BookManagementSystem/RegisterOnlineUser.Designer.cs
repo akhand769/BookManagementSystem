@@ -36,13 +36,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.register = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Passbx = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.dobbx = new System.Windows.Forms.DateTimePicker();
             this.maibx = new System.Windows.Forms.TextBox();
             this.addbx = new System.Windows.Forms.TextBox();
             this.mbbx = new System.Windows.Forms.TextBox();
             this.Namebx = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.Passbx = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,6 +120,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Passbx);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.dobbx);
@@ -131,6 +133,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1025, 725);
             this.panel1.TabIndex = 7;
+            // 
+            // Passbx
+            // 
+            this.Passbx.Location = new System.Drawing.Point(222, 473);
+            this.Passbx.Name = "Passbx";
+            this.Passbx.Size = new System.Drawing.Size(259, 27);
+            this.Passbx.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.GhostWhite;
+            this.label7.Location = new System.Drawing.Point(58, 480);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Password -";
             // 
             // dobbx
             // 
@@ -168,22 +187,15 @@
             this.Namebx.Size = new System.Drawing.Size(500, 27);
             this.Namebx.TabIndex = 0;
             // 
-            // label7
+            // button1
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.GhostWhite;
-            this.label7.Location = new System.Drawing.Point(58, 480);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Password -";
-            // 
-            // Passbx
-            // 
-            this.Passbx.Location = new System.Drawing.Point(222, 473);
-            this.Passbx.Name = "Passbx";
-            this.Passbx.Size = new System.Drawing.Size(259, 27);
-            this.Passbx.TabIndex = 7;
+            this.button1.Location = new System.Drawing.Point(778, 60);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // RegisterOnlineUser
             // 
@@ -226,5 +238,6 @@
         private DateTimePicker dobbx;
         private TextBox Passbx;
         private Label label7;
+        private Button button1;
     }
 }
