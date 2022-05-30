@@ -67,7 +67,17 @@ namespace BookManagementSystem
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            ChooseMode Obj= new ChooseMode();
+           
+        }
+
+        private void UnameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click_1(object sender, EventArgs e)
+        {
+            ChooseMode Obj = new ChooseMode();
             Obj.Show();
             this.Hide();
         }

@@ -33,6 +33,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -41,7 +42,6 @@
             this.UPassTb = new System.Windows.Forms.TextBox();
             this.UnameTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,6 +108,17 @@
             this.panel2.Size = new System.Drawing.Size(501, 451);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(191, 406);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 25);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Cancel";
+            this.label4.Click += new System.EventHandler(this.label4_Click_1);
             // 
             // label5
             // 
@@ -177,6 +188,7 @@
             this.UnameTb.Name = "UnameTb";
             this.UnameTb.Size = new System.Drawing.Size(317, 34);
             this.UnameTb.TabIndex = 1;
+            this.UnameTb.TextChanged += new System.EventHandler(this.UnameTb_TextChanged);
             // 
             // label1
             // 
@@ -187,16 +199,6 @@
             this.label1.Size = new System.Drawing.Size(183, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "BOOK SHOP";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(191, 406);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 25);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Cancel";
             // 
             // Login
             // 
