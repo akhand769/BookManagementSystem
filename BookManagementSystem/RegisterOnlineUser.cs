@@ -30,8 +30,8 @@ namespace BookManagementSystem
                 SqlDataAdapter sda3 = new SqlDataAdapter("select count(*) from OnlineUser where email ='" + maibx.Text + "'", Con);
                 DataTable dt = new DataTable();
                 sda3.Fill(dt);
-
-                if (dt.Rows[0][0]=="1")
+                
+                if (Int64.Parse(dt.Rows[0][0].ToString())>=1)
                 {
                     MessageBox.Show("User Already Exists");
                 }
