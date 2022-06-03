@@ -62,7 +62,7 @@ namespace BookManagementSystem
                 string query = "update BookTbl set BQTY='" + newQty + "' where  BId=" + key + ";";
                 SqlCommand cmd = new SqlCommand(query, Con);
                 cmd.ExecuteNonQuery();
-                //MessageBox.Show("Book Updated Successfully");
+                MessageBox.Show("Book Updated Successfully");
                 Con.Close();
                 populate();
             }

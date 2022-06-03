@@ -279,7 +279,7 @@
             // 
             this.Booktitlelbl.AutoSize = true;
             this.Booktitlelbl.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Booktitlelbl.Location = new System.Drawing.Point(48, 162);
+            this.Booktitlelbl.Location = new System.Drawing.Point(80, 162);
             this.Booktitlelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Booktitlelbl.Name = "Booktitlelbl";
             this.Booktitlelbl.Size = new System.Drawing.Size(112, 21);
@@ -405,16 +405,16 @@
             // Bookname
             // 
             this.Bookname.Enabled = false;
-            this.Bookname.Location = new System.Drawing.Point(31, 193);
+            this.Bookname.Location = new System.Drawing.Point(18, 193);
             this.Bookname.Name = "Bookname";
-            this.Bookname.Size = new System.Drawing.Size(172, 27);
+            this.Bookname.Size = new System.Drawing.Size(218, 27);
             this.Bookname.TabIndex = 30;
             // 
             // QtyTb
             // 
-            this.QtyTb.Location = new System.Drawing.Point(242, 193);
+            this.QtyTb.Location = new System.Drawing.Point(255, 193);
             this.QtyTb.Name = "QtyTb";
-            this.QtyTb.Size = new System.Drawing.Size(125, 27);
+            this.QtyTb.Size = new System.Drawing.Size(102, 27);
             this.QtyTb.TabIndex = 29;
             // 
             // printPreviewDialog1
