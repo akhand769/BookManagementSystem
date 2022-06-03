@@ -54,10 +54,10 @@
             this.PrintBtn = new System.Windows.Forms.Button();
             this.ResetBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
-            this.QtyTb = new System.Windows.Forms.TextBox();
-            this.BNameTb = new System.Windows.Forms.TextBox();
             this.Authorlbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Bookname = new System.Windows.Forms.TextBox();
+            this.QtyTb = new System.Windows.Forms.TextBox();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.BillDGV)).BeginInit();
@@ -89,6 +89,7 @@
             this.PriceTb.Name = "PriceTb";
             this.PriceTb.Size = new System.Drawing.Size(128, 27);
             this.PriceTb.TabIndex = 24;
+            this.PriceTb.TextChanged += new System.EventHandler(this.PriceTb_TextChanged);
             // 
             // label3
             // 
@@ -365,23 +366,6 @@
             this.SaveBtn.UseVisualStyleBackColor = false;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // QtyTb
-            // 
-            this.QtyTb.Location = new System.Drawing.Point(229, 185);
-            this.QtyTb.Margin = new System.Windows.Forms.Padding(2);
-            this.QtyTb.Name = "QtyTb";
-            this.QtyTb.Size = new System.Drawing.Size(128, 27);
-            this.QtyTb.TabIndex = 4;
-            // 
-            // BNameTb
-            // 
-            this.BNameTb.Enabled = false;
-            this.BNameTb.Location = new System.Drawing.Point(10, 185);
-            this.BNameTb.Margin = new System.Windows.Forms.Padding(2);
-            this.BNameTb.Name = "BNameTb";
-            this.BNameTb.Size = new System.Drawing.Size(216, 27);
-            this.BNameTb.TabIndex = 3;
-            // 
             // Authorlbl
             // 
             this.Authorlbl.AutoSize = true;
@@ -396,6 +380,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.Bookname);
+            this.panel2.Controls.Add(this.QtyTb);
             this.panel2.Controls.Add(this.usernamelbl);
             this.panel2.Controls.Add(this.TotalLbl);
             this.panel2.Controls.Add(this.BillDGV);
@@ -407,8 +393,6 @@
             this.panel2.Controls.Add(this.PrintBtn);
             this.panel2.Controls.Add(this.ResetBtn);
             this.panel2.Controls.Add(this.SaveBtn);
-            this.panel2.Controls.Add(this.QtyTb);
-            this.panel2.Controls.Add(this.BNameTb);
             this.panel2.Controls.Add(this.Authorlbl);
             this.panel2.Controls.Add(this.Booktitlelbl);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -417,6 +401,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(980, 827);
             this.panel2.TabIndex = 7;
+            // 
+            // Bookname
+            // 
+            this.Bookname.Enabled = false;
+            this.Bookname.Location = new System.Drawing.Point(31, 193);
+            this.Bookname.Name = "Bookname";
+            this.Bookname.Size = new System.Drawing.Size(172, 27);
+            this.Bookname.TabIndex = 30;
+            // 
+            // QtyTb
+            // 
+            this.QtyTb.Location = new System.Drawing.Point(242, 193);
+            this.QtyTb.Name = "QtyTb";
+            this.QtyTb.Size = new System.Drawing.Size(125, 27);
+            this.QtyTb.TabIndex = 29;
             // 
             // printPreviewDialog1
             // 
@@ -486,11 +485,11 @@
         private Button PrintBtn;
         private Button ResetBtn;
         private Button SaveBtn;
-        private TextBox QtyTb;
-        private TextBox BNameTb;
         private Label Authorlbl;
         private Panel panel2;
         private PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private TextBox QtyTb;
+        private TextBox Bookname;
     }
 }

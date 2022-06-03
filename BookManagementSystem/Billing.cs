@@ -127,14 +127,23 @@ namespace BookManagementSystem
                 try
                 {
                     Con.Open();
+                    if(BNameTb.Text=="")
+                    {
+                        MessageBox.Show("Null");
+                    }
                     int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
+                  
                     GrndTotal = GrndTotal + total;
                     String str = DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss");
-                    string query = "insert into BillTbl values('" +BNameTb.Text + "','" + ClientTb.Text + "','" +GrndTotal+ "','" + str + "' )";
+             
+                    string query = "insert into BillTbl values('"+BNameTb.Text+"','"+ClientTb.Text+"','"+GrndTotal+"','"+str+"')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Bill Saved Successfully");
                     Con.Close();
+                    UpdateBook();
+                    Reset();
+                   
                 }
                 catch (Exception Ex)
                 {
@@ -173,6 +182,16 @@ namespace BookManagementSystem
             this.Hide();
         }
 
+        private void ClientTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BNameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         string prodname ="Null";
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -197,10 +216,9 @@ namespace BookManagementSystem
             e.Graphics.DrawString("**********BookStore**********" , new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Crimson, new Point(40, pos + 85));
             BillDGV.Rows.Clear();
             BillDGV.Refresh();
-            UpdateBook();
-            Reset();
             TotalLbl.Text = "Total";
             GrndTotal = 0;
+
 
         }
 

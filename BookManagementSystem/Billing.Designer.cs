@@ -35,7 +35,6 @@
             this.ResetBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.QtyTb = new System.Windows.Forms.TextBox();
-            this.BNameTb = new System.Windows.Forms.TextBox();
             this.Authorlbl = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Booktitlelbl = new System.Windows.Forms.Label();
@@ -44,9 +43,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BNameTb = new System.Windows.Forms.TextBox();
             this.usernamelbl = new System.Windows.Forms.Label();
             this.TotalLbl = new System.Windows.Forms.Label();
             this.BillDGV = new System.Windows.Forms.DataGridView();
@@ -62,20 +66,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BookDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillDGV)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // BookDGV
@@ -166,15 +166,6 @@
             this.QtyTb.Size = new System.Drawing.Size(128, 27);
             this.QtyTb.TabIndex = 4;
             this.QtyTb.TextChanged += new System.EventHandler(this.QtyTb_TextChanged);
-            // 
-            // BNameTb
-            // 
-            this.BNameTb.Enabled = false;
-            this.BNameTb.Location = new System.Drawing.Point(10, 185);
-            this.BNameTb.Margin = new System.Windows.Forms.Padding(2);
-            this.BNameTb.Name = "BNameTb";
-            this.BNameTb.Size = new System.Drawing.Size(216, 27);
-            this.BNameTb.TabIndex = 3;
             // 
             // Authorlbl
             // 
@@ -269,6 +260,52 @@
             this.panel1.Size = new System.Drawing.Size(203, 827);
             this.panel1.TabIndex = 4;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DimGray;
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Location = new System.Drawing.Point(18, 296);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(176, 39);
+            this.panel3.TabIndex = 7;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(8, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 49);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(77, 3);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 30);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Books";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(64, 10);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 20);
+            this.label6.TabIndex = 0;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -294,6 +331,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.BNameTb);
             this.panel2.Controls.Add(this.usernamelbl);
             this.panel2.Controls.Add(this.TotalLbl);
             this.panel2.Controls.Add(this.BillDGV);
@@ -308,7 +346,6 @@
             this.panel2.Controls.Add(this.ResetBtn);
             this.panel2.Controls.Add(this.SaveBtn);
             this.panel2.Controls.Add(this.QtyTb);
-            this.panel2.Controls.Add(this.BNameTb);
             this.panel2.Controls.Add(this.Authorlbl);
             this.panel2.Controls.Add(this.Booktitlelbl);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -317,6 +354,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(980, 827);
             this.panel2.TabIndex = 5;
+            // 
+            // BNameTb
+            // 
+            this.BNameTb.Location = new System.Drawing.Point(10, 186);
+            this.BNameTb.Name = "BNameTb";
+            this.BNameTb.Size = new System.Drawing.Size(214, 27);
+            this.BNameTb.TabIndex = 29;
+            this.BNameTb.TextChanged += new System.EventHandler(this.BNameTb_TextChanged);
             // 
             // usernamelbl
             // 
@@ -426,6 +471,7 @@
             this.ClientTb.Name = "ClientTb";
             this.ClientTb.Size = new System.Drawing.Size(216, 27);
             this.ClientTb.TabIndex = 23;
+            this.ClientTb.TextChanged += new System.EventHandler(this.ClientTb_TextChanged);
             // 
             // label3
             // 
@@ -465,52 +511,6 @@
             this.printPreviewDialog1.Visible = false;
             this.printPreviewDialog1.Load += new System.EventHandler(this.printPreviewDialog1_Load);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DimGray;
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(18, 296);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(176, 39);
-            this.panel3.TabIndex = 7;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(8, 2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 49);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(77, 3);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 30);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Books";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(64, 10);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 20);
-            this.label6.TabIndex = 0;
-            // 
             // Billing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -531,13 +531,13 @@
             this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillDGV)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -549,7 +549,6 @@
         private Button ResetBtn;
         private Button SaveBtn;
         private TextBox QtyTb;
-        private TextBox BNameTb;
         private Label Authorlbl;
         private PictureBox pictureBox2;
         private Label Booktitlelbl;
@@ -580,5 +579,6 @@
         private PictureBox pictureBox3;
         private Label label5;
         private Label label6;
+        private TextBox BNameTb;
     }
 }

@@ -97,6 +97,7 @@
             this.label5.Size = new System.Drawing.Size(23, 25);
             this.label5.TabIndex = 8;
             this.label5.Text = "X";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // button1
             // 
@@ -133,11 +134,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(37, 210);
+            this.label2.Location = new System.Drawing.Point(46, 210);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 25);
+            this.label2.Size = new System.Drawing.Size(69, 25);
             this.label2.TabIndex = 3;
-            this.label2.Text = "USER NAME";
+            this.label2.Text = "E-MAIL";
             // 
             // UPass
             // 
@@ -155,6 +156,7 @@
             this.Uname.Name = "Uname";
             this.Uname.Size = new System.Drawing.Size(317, 34);
             this.Uname.TabIndex = 1;
+            this.Uname.TextChanged += new System.EventHandler(this.Uname_TextChanged);
             // 
             // label1
             // 

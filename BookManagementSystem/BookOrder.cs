@@ -25,9 +25,9 @@ namespace BookManagementSystem
         int key = 0, stock = 0;
         private void BookDGV_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            BNameTb.Text = BookDGV.CurrentRow.Cells[1].Value.ToString();
+            Bookname.Text = BookDGV.CurrentRow.Cells[1].Value.ToString();
             PriceTb.Text = BookDGV.CurrentRow.Cells[5].Value.ToString();
-            if (BNameTb.Text == "")
+            if (Bookname.Text == "")
             {
                 key = 0;
                 stock = 0;
@@ -84,7 +84,7 @@ namespace BookManagementSystem
                 DataGridViewRow newRow = new DataGridViewRow();
                 newRow.CreateCells(BillDGV);
                 newRow.Cells[0].Value = n + 1;
-                newRow.Cells[1].Value = BNameTb.Text;
+                newRow.Cells[1].Value = Bookname.Text;
                 newRow.Cells[2].Value = QtyTb.Text;
                 newRow.Cells[3].Value = PriceTb.Text;
                 newRow.Cells[4].Value = total;
@@ -98,7 +98,7 @@ namespace BookManagementSystem
         } 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
-            if (BNameTb.Text == "")
+            if (Bookname.Text == "")
             {
                 MessageBox.Show("Select Book");
             }
@@ -116,11 +116,13 @@ namespace BookManagementSystem
                     int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
                     GrndTotal = GrndTotal + total;
                     String str= DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss");
-                    string query = "insert into BillTbl values('" + BNameTb.Text + "','" + LoginUser.UserName + "','" + GrndTotal + "','" + str+ "' )";
+                    string query = "insert into BillTbl values('"+Bookname.Text+ "','" +LoginUser.UserName + "','" +GrndTotal+ "','" + str + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Order Placed Successfully");
                     Con.Close();
+                    UpdateBook();
+                    Reset();
                 }
                 catch (Exception Ex)
                 {
@@ -146,6 +148,11 @@ namespace BookManagementSystem
         int prodid, prodqty, prodprice, tottal, pos = 60;
 
         private void TotalLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PriceTb_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -181,14 +188,14 @@ namespace BookManagementSystem
             e.Graphics.DrawString("**********BookStore**********", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Crimson, new Point(40, pos + 85));
             BillDGV.Rows.Clear();
             BillDGV.Refresh();
-            Reset();
+           
             TotalLbl.Text = "Total";
-            UpdateBook();
+            
             GrndTotal = 0;
         }
         private void Reset()
         {
-            BNameTb.Text = "";
+            Bookname.Text = "";
             QtyTb.Text = "";
             PriceTb.Text = "";
         }

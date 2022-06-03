@@ -36,9 +36,21 @@ namespace BookManagementSystem
         }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            if (PhoneTb.Text == "" || Convert.ToInt64(PhoneTb.Text) > 9999999999 || Convert.ToInt64(PhoneTb.Text) < 6000000000)
+            {
+                MessageBox.Show("Invalid Phone Number");
+            }
             if (UnameTb.Text == "" || PhoneTb.Text == "" || AddTb.Text == "" || PassTb.Text == "")
             {
                 MessageBox.Show("MISSING INFORMATION");
+            }
+            SqlDataAdapter sda3 = new SqlDataAdapter("select count(*) from UserTbl where UPhone ='" + PhoneTb.Text + "'", Con);
+            DataTable dt = new DataTable();
+            sda3.Fill(dt);
+
+            if (Int64.Parse(dt.Rows[0][0].ToString()) >= 1)
+            {
+                MessageBox.Show("Seller Already Exists");
             }
             else
             {
@@ -48,7 +60,7 @@ namespace BookManagementSystem
                     string query = "insert into UserTbl values('" + UnameTb.Text + "','" + PhoneTb.Text + "','" + AddTb.Text + "','" + PassTb.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("User Saved Successfully");
+                    MessageBox.Show("Seller Saved Successfully");
                     Con.Close();
                     populate();
                    // Reset();
@@ -102,7 +114,7 @@ namespace BookManagementSystem
                     string query = "delete from UserTbl where UId=" + key + ";";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("User Deleted Successfully");
+                    MessageBox.Show("Seller Deleted Successfully");
                     Con.Close();
                     populate();
                     Reset();
@@ -129,7 +141,7 @@ namespace BookManagementSystem
                     string query = "update UserTbl set UName='" + UnameTb.Text + "',UPhone='" + PhoneTb.Text + "',UAdd='" + AddTb.Text + "',UPass='" + PassTb.Text + "' where UId="+key+";";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("User Updated Successfully");
+                    MessageBox.Show("Seller Updated Successfully");
                     Con.Close();
                     populate();
                     Reset();
@@ -163,7 +175,7 @@ namespace BookManagementSystem
 
         private void label8_Click(object sender, EventArgs e)
         {
-            Login Obj = new Login();
+            ChooseMode Obj = new ChooseMode();
             Obj.Show();
             this.Hide();
         }

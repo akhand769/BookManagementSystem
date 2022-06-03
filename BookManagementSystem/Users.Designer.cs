@@ -134,9 +134,9 @@
             this.label4.Location = new System.Drawing.Point(97, 17);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 23);
+            this.label4.Size = new System.Drawing.Size(62, 23);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Users";
+            this.label4.Text = "Seller";
             // 
             // UserDGV
             // 
@@ -299,7 +299,7 @@
             // 
             this.quantitylbl.AutoSize = true;
             this.quantitylbl.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.quantitylbl.Location = new System.Drawing.Point(680, 149);
+            this.quantitylbl.Location = new System.Drawing.Point(678, 152);
             this.quantitylbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.quantitylbl.Name = "quantitylbl";
             this.quantitylbl.Size = new System.Drawing.Size(114, 25);
@@ -310,7 +310,7 @@
             // 
             this.Addresslbl.AutoSize = true;
             this.Addresslbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Addresslbl.Location = new System.Drawing.Point(496, 151);
+            this.Addresslbl.Location = new System.Drawing.Point(481, 154);
             this.Addresslbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Addresslbl.Name = "Addresslbl";
             this.Addresslbl.Size = new System.Drawing.Size(88, 23);
@@ -330,7 +330,7 @@
             this.UnameTb.Location = new System.Drawing.Point(18, 186);
             this.UnameTb.Margin = new System.Windows.Forms.Padding(2);
             this.UnameTb.Name = "UnameTb";
-            this.UnameTb.Size = new System.Drawing.Size(149, 27);
+            this.UnameTb.Size = new System.Drawing.Size(193, 27);
             this.UnameTb.TabIndex = 3;
             // 
             // label6
@@ -350,7 +350,7 @@
             // 
             this.Phonelbl.AutoSize = true;
             this.Phonelbl.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Phonelbl.Location = new System.Drawing.Point(253, 147);
+            this.Phonelbl.Location = new System.Drawing.Point(266, 152);
             this.Phonelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Phonelbl.Name = "Phonelbl";
             this.Phonelbl.Size = new System.Drawing.Size(79, 25);
@@ -375,9 +375,9 @@
             this.Usrnametitlelbl.Location = new System.Drawing.Point(40, 149);
             this.Usrnametitlelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Usrnametitlelbl.Name = "Usrnametitlelbl";
-            this.Usrnametitlelbl.Size = new System.Drawing.Size(130, 25);
+            this.Usrnametitlelbl.Size = new System.Drawing.Size(143, 25);
             this.Usrnametitlelbl.TabIndex = 1;
-            this.Usrnametitlelbl.Text = "User Name";
+            this.Usrnametitlelbl.Text = "Seller Name";
             // 
             // pictureBox6
             // 
@@ -502,9 +502,9 @@
             // 
             // AddTb
             // 
-            this.AddTb.Location = new System.Drawing.Point(460, 182);
+            this.AddTb.Location = new System.Drawing.Point(406, 182);
             this.AddTb.Name = "AddTb";
-            this.AddTb.Size = new System.Drawing.Size(169, 27);
+            this.AddTb.Size = new System.Drawing.Size(223, 27);
             this.AddTb.TabIndex = 21;
             // 
             // Users

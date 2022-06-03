@@ -28,11 +28,11 @@ namespace BookManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             Con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from OnlineUser where Name ='" + Uname.Text + "' and Password='" + UPass.Text + "'", Con);
+            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from OnlineUser where email ='" + Uname.Text + "' and Password='" + UPass.Text + "'", Con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             //MessageBox.Show(dt.Rows[0][0].ToString());
-            if (dt.Rows[0][0].ToString() == "1")
+            if (Int64.Parse(dt.Rows[0][0].ToString())>=1)
             {
                 UserName = Uname.Text;
                 BookOrder Obj = new BookOrder();
@@ -53,6 +53,16 @@ namespace BookManagementSystem
             RegisterOnlineUser Obj = new RegisterOnlineUser();
             Obj.Show();
             this.Hide();
+        }
+
+        private void Uname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

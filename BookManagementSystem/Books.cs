@@ -264,7 +264,7 @@ namespace BookManagementSystem
 
         private void label8_Click(object sender, EventArgs e)
         {
-            Login Obj = new Login();
+            ChooseMode Obj = new ChooseMode();
             Obj.Show();
             this.Hide();
         }
