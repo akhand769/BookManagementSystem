@@ -36,40 +36,52 @@ namespace BookManagementSystem
         }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from UserTbl where UPhone ='" + PhoneTb.Text + "'", Con);
+            DataTable dt1 = new DataTable();
+            sda.Fill(dt1);
             if (PhoneTb.Text == "" || Convert.ToInt64(PhoneTb.Text) > 9999999999 || Convert.ToInt64(PhoneTb.Text) < 6000000000)
             {
                 MessageBox.Show("Invalid Phone Number");
             }
-            if (UnameTb.Text == "" || PhoneTb.Text == "" || AddTb.Text == "" || PassTb.Text == "")
+            else if (UnameTb.Text == "" || PhoneTb.Text == "" || AddTb.Text == "" || PassTb.Text == "")
             {
+                
                 MessageBox.Show("MISSING INFORMATION");
             }
-            SqlDataAdapter sda3 = new SqlDataAdapter("select count(*) from UserTbl where UPhone ='" + PhoneTb.Text + "'", Con);
-            DataTable dt = new DataTable();
-            sda3.Fill(dt);
-
-            if (Int64.Parse(dt.Rows[0][0].ToString()) >= 1)
+            
+            else if(Int64.Parse(dt1.Rows[0][0].ToString()) >= 1)
             {
-                MessageBox.Show("Seller Already Exists");
+                MessageBox.Show("Seller Already Exists.");
             }
             else
             {
-                try
-                {
-                    Con.Open();
-                    string query = "insert into UserTbl values('" + UnameTb.Text + "','" + PhoneTb.Text + "','" + AddTb.Text + "','" + PassTb.Text + "')";
-                    SqlCommand cmd = new SqlCommand(query, Con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Seller Saved Successfully");
-                    Con.Close();
-                    populate();
-                   // Reset();
-                }
-                catch (Exception Ex)
-                {
-                    MessageBox.Show(Ex.Message);
-                }
+                SqlDataAdapter sda3 = new SqlDataAdapter("select count(*) from UserTbl where UPhone ='" + PhoneTb.Text + "'", Con);
+                DataTable dt = new DataTable();
+                sda3.Fill(dt);
 
+                if (Int64.Parse(dt.Rows[0][0].ToString()) >= 1)
+                {
+                    MessageBox.Show("Seller Already Exists");
+                }
+                else
+                {
+                    try
+                    {
+                        Con.Open();
+                        string query = "insert into UserTbl values('" + UnameTb.Text + "','" + PhoneTb.Text + "','" + AddTb.Text + "','" + PassTb.Text + "')";
+                        SqlCommand cmd = new SqlCommand(query, Con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Seller Saved Successfully");
+                        Con.Close();
+                        populate();
+                        // Reset();
+                    }
+                    catch (Exception Ex)
+                    {
+                        MessageBox.Show(Ex.Message);
+                    }
+
+                }
             }
         }
         private void Reset()

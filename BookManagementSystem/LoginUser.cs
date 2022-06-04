@@ -31,7 +31,6 @@ namespace BookManagementSystem
             SqlDataAdapter sda = new SqlDataAdapter("select count(*) from OnlineUser where email ='" + Uname.Text + "' and Password='" + UPass.Text + "'", Con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            //MessageBox.Show(dt.Rows[0][0].ToString());
             if (Int64.Parse(dt.Rows[0][0].ToString())>=1)
             {
                 UserName = Uname.Text;

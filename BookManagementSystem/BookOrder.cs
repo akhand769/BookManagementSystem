@@ -25,6 +25,7 @@ namespace BookManagementSystem
         int key = 0, stock = 0;
         private void BookDGV_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            Bid.Text = BookDGV.CurrentRow.Cells[0].Value.ToString();
             Bookname.Text = BookDGV.CurrentRow.Cells[1].Value.ToString();
             PriceTb.Text = BookDGV.CurrentRow.Cells[5].Value.ToString();
             if (Bookname.Text == "")
@@ -62,7 +63,7 @@ namespace BookManagementSystem
                 string query = "update BookTbl set BQTY='" + newQty + "' where  BId=" + key + ";";
                 SqlCommand cmd = new SqlCommand(query, Con);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Book Updated Successfully");
+               // MessageBox.Show("Book Updated Successfully");
                 Con.Close();
                 populate();
             }
@@ -73,28 +74,48 @@ namespace BookManagementSystem
         }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-
-            if (QtyTb.Text == "" || Convert.ToInt32(QtyTb.Text) > stock)
+            int flag = 0;
+            foreach (DataGridViewRow row in BillDGV.Rows)
             {
-                MessageBox.Show("No Enough Stock");
+                if (Convert.ToInt32(row.Cells["Column1"].Value) == Convert.ToInt32(Bid.Text))
+                {
+                    flag = 1;
+                    break;
+                }
+
+            }
+            if (flag == 1)
+            {
+                MessageBox.Show("Already added");
             }
             else
             {
-                int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
-                DataGridViewRow newRow = new DataGridViewRow();
-                newRow.CreateCells(BillDGV);
-                newRow.Cells[0].Value = n + 1;
-                newRow.Cells[1].Value = Bookname.Text;
-                newRow.Cells[2].Value = QtyTb.Text;
-                newRow.Cells[3].Value = PriceTb.Text;
-                newRow.Cells[4].Value = total;
-                BillDGV.Rows.Add(newRow);
-                n++;
-                GrndTotal = GrndTotal + total;
-                int p = GrndTotal;
-                TotalLbl.Text = "Rs  " + p.ToString();
-               
+                if (QtyTb.Text == "" || Convert.ToInt32(QtyTb.Text) > stock)
+                {
+                    MessageBox.Show("No Enough Stock");
+                }
+                else
+                {
+                    int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
+                    DataGridViewRow newRow = new DataGridViewRow();
+                    newRow.CreateCells(BillDGV);
+                    newRow.Cells[0].Value = Bid.Text;
+                    newRow.Cells[1].Value = Bookname.Text;
+                    newRow.Cells[2].Value = PriceTb.Text;
+                    newRow.Cells[3].Value = QtyTb.Text;
+                    newRow.Cells[4].Value = total;
+                    BillDGV.Rows.Add(newRow);
+                    n++;
+                    GrndTotal = GrndTotal + total;
+                    int p = GrndTotal;
+                    TotalLbl.Text = "Rs  " + p.ToString();
+                    UpdateBook();
+
+
+                }
             }
+            
+            
         } 
         private void PrintBtn_Click(object sender, EventArgs e)
         {
@@ -121,7 +142,7 @@ namespace BookManagementSystem
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Order Placed Successfully");
                     Con.Close();
-                    UpdateBook();
+                    
                     Reset();
                 }
                 catch (Exception Ex)
@@ -153,6 +174,53 @@ namespace BookManagementSystem
         }
 
         private void PriceTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RmBtn_Click(object sender, EventArgs e)
+        {
+            int quantity = 0;
+
+            string value;
+            if (BillDGV.Rows.Count > 1)
+            {
+
+                int rowIndex = BillDGV.CurrentCell.RowIndex;
+                value = BillDGV.Rows[rowIndex].Cells[3].Value.ToString();
+                quantity = Convert.ToInt32(value);
+
+                String id = BillDGV.Rows[rowIndex].Cells[0].Value.ToString();
+
+                BillDGV.Rows.RemoveAt(rowIndex);
+
+                try
+                {
+                    Con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter("select BQty from BookTbl where BId='" + Convert.ToInt32(id) + "'", Con);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    int sum = Convert.ToInt32(dt.Rows[0][0].ToString()) + quantity;
+
+                    string query = "update BookTbl set BQTY='" + sum + "' where  BId='" + id + "';";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+
+                    Con.Close();
+                    populate();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Cart Empty");
+            }
+        }
+
+        private void Bid_TextChanged(object sender, EventArgs e)
         {
 
         }

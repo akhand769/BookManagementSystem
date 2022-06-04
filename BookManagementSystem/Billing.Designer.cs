@@ -50,6 +50,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.RmBtn = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Bid = new System.Windows.Forms.TextBox();
             this.BNameTb = new System.Windows.Forms.TextBox();
             this.usernamelbl = new System.Windows.Forms.Label();
             this.TotalLbl = new System.Windows.Forms.Label();
@@ -132,7 +135,7 @@
             this.ResetBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ResetBtn.ForeColor = System.Drawing.Color.Black;
             this.ResetBtn.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.ResetBtn.Location = new System.Drawing.Point(142, 326);
+            this.ResetBtn.Location = new System.Drawing.Point(246, 324);
             this.ResetBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ResetBtn.Name = "ResetBtn";
             this.ResetBtn.Size = new System.Drawing.Size(111, 31);
@@ -149,7 +152,7 @@
             this.SaveBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SaveBtn.ForeColor = System.Drawing.Color.Black;
             this.SaveBtn.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.SaveBtn.Location = new System.Drawing.Point(18, 326);
+            this.SaveBtn.Location = new System.Drawing.Point(48, 324);
             this.SaveBtn.Margin = new System.Windows.Forms.Padding(2);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(118, 31);
@@ -331,6 +334,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.RmBtn);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.Bid);
             this.panel2.Controls.Add(this.BNameTb);
             this.panel2.Controls.Add(this.usernamelbl);
             this.panel2.Controls.Add(this.TotalLbl);
@@ -355,8 +361,36 @@
             this.panel2.Size = new System.Drawing.Size(980, 827);
             this.panel2.TabIndex = 5;
             // 
+            // RmBtn
+            // 
+            this.RmBtn.Location = new System.Drawing.Point(125, 376);
+            this.RmBtn.Name = "RmBtn";
+            this.RmBtn.Size = new System.Drawing.Size(169, 29);
+            this.RmBtn.TabIndex = 32;
+            this.RmBtn.Text = "Remove from Cart";
+            this.RmBtn.UseVisualStyleBackColor = true;
+            this.RmBtn.Click += new System.EventHandler(this.RmBtn_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(82, 101);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 20);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Bid";
+            // 
+            // Bid
+            // 
+            this.Bid.Enabled = false;
+            this.Bid.Location = new System.Drawing.Point(35, 132);
+            this.Bid.Name = "Bid";
+            this.Bid.Size = new System.Drawing.Size(125, 27);
+            this.Bid.TabIndex = 30;
+            // 
             // BNameTb
             // 
+            this.BNameTb.Enabled = false;
             this.BNameTb.Location = new System.Drawing.Point(10, 186);
             this.BNameTb.Name = "BNameTb";
             this.BNameTb.Size = new System.Drawing.Size(214, 27);
@@ -580,5 +614,8 @@
         private Label label5;
         private Label label6;
         private TextBox BNameTb;
+        private Label label7;
+        private TextBox Bid;
+        private Button RmBtn;
     }
 }

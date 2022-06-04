@@ -108,10 +108,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1147, 844);
+            this.BackColor = System.Drawing.Color.Purple;
+            this.ClientSize = new System.Drawing.Size(1113, 826);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ViewOnline";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewOnline";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

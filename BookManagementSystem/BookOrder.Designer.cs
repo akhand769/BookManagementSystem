@@ -56,6 +56,9 @@
             this.SaveBtn = new System.Windows.Forms.Button();
             this.Authorlbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Bid = new System.Windows.Forms.TextBox();
+            this.RmBtn = new System.Windows.Forms.Button();
             this.Bookname = new System.Windows.Forms.TextBox();
             this.QtyTb = new System.Windows.Forms.TextBox();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
@@ -380,6 +383,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.Bid);
+            this.panel2.Controls.Add(this.RmBtn);
             this.panel2.Controls.Add(this.Bookname);
             this.panel2.Controls.Add(this.QtyTb);
             this.panel2.Controls.Add(this.usernamelbl);
@@ -401,6 +407,34 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(980, 827);
             this.panel2.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(138, 103);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 20);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Bid";
+            // 
+            // Bid
+            // 
+            this.Bid.Enabled = false;
+            this.Bid.Location = new System.Drawing.Point(96, 126);
+            this.Bid.Name = "Bid";
+            this.Bid.Size = new System.Drawing.Size(125, 27);
+            this.Bid.TabIndex = 34;
+            this.Bid.TextChanged += new System.EventHandler(this.Bid_TextChanged);
+            // 
+            // RmBtn
+            // 
+            this.RmBtn.Location = new System.Drawing.Point(97, 373);
+            this.RmBtn.Name = "RmBtn";
+            this.RmBtn.Size = new System.Drawing.Size(169, 29);
+            this.RmBtn.TabIndex = 33;
+            this.RmBtn.Text = "Remove from Cart";
+            this.RmBtn.UseVisualStyleBackColor = true;
+            this.RmBtn.Click += new System.EventHandler(this.RmBtn_Click);
             // 
             // Bookname
             // 
@@ -491,5 +525,8 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         private TextBox QtyTb;
         private TextBox Bookname;
+        private Button RmBtn;
+        private Label label7;
+        private TextBox Bid;
     }
 }
