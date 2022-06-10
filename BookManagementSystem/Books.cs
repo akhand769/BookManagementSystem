@@ -68,9 +68,16 @@ namespace BookManagementSystem
         }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            if(BTitleTb.Text==""||BauthTb.Text == ""|| QtyTb.Text==""||PriceTb.Text==""||BCatCb.SelectedIndex==-1)
+            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from BookTbl where BTitle ='" + BTitleTb.Text + "' And BAuthor = '" + BauthTb.Text + "'", Con);
+            DataTable dt1 = new DataTable();
+            sda.Fill(dt1);
+            if (BTitleTb.Text == "" || BauthTb.Text == "" || QtyTb.Text == "" || PriceTb.Text == "" || BCatCb.SelectedIndex == -1)
             {
                 MessageBox.Show("MISSING INFORMATION");
+            }
+            else if (Int64.Parse(dt1.Rows[0][0].ToString()) >= 1)
+            {
+                MessageBox.Show("Book Already Exists, You can Edit but not add same book.");
             }
             else
             {
