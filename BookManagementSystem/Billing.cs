@@ -288,12 +288,14 @@ namespace BookManagementSystem
                 pos += 25;
 
             }
+            
             e.Graphics.DrawString("Grand Total : RS" + GrndTotal, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Crimson, new Point(60, pos + 50));
             e.Graphics.DrawString("**********BookStore**********" , new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Crimson, new Point(40, pos + 85));
             BillDGV.Rows.Clear();
             BillDGV.Refresh();
             TotalLbl.Text = "Total";
             GrndTotal = 0;
+            pos = 60;
 
 
         }
