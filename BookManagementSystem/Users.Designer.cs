@@ -91,7 +91,7 @@
             this.panel3.Location = new System.Drawing.Point(35, 286);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(265, 61);
+            this.panel3.Size = new System.Drawing.Size(282, 58);
             this.panel3.TabIndex = 3;
             // 
             // pictureBox3
@@ -143,15 +143,16 @@
             // 
             // UserDGV
             // 
-            this.UserDGV.BackgroundColor = System.Drawing.Color.White;
+            this.UserDGV.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.UserDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UserDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.UserDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.UserDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -160,17 +161,17 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.UserDGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.UserDGV.GridColor = System.Drawing.Color.White;
-            this.UserDGV.Location = new System.Drawing.Point(50, 435);
+            this.UserDGV.Location = new System.Drawing.Point(19, 450);
             this.UserDGV.Margin = new System.Windows.Forms.Padding(4);
             this.UserDGV.Name = "UserDGV";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.UserDGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.UserDGV.RowHeadersWidth = 51;
             this.UserDGV.RowTemplate.Height = 29;
             this.UserDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.UserDGV.Size = new System.Drawing.Size(934, 458);
+            this.UserDGV.Size = new System.Drawing.Size(1023, 396);
             this.UserDGV.TabIndex = 20;
             this.UserDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserDGV_CellContentClick);
             // 
@@ -178,7 +179,7 @@
             // 
             this.userlistlbl.AutoSize = true;
             this.userlistlbl.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.userlistlbl.Location = new System.Drawing.Point(421, 374);
+            this.userlistlbl.Location = new System.Drawing.Point(478, 398);
             this.userlistlbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.userlistlbl.Name = "userlistlbl";
             this.userlistlbl.Size = new System.Drawing.Size(109, 32);
@@ -197,7 +198,7 @@
             this.EditBtn.Margin = new System.Windows.Forms.Padding(2);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EditBtn.Size = new System.Drawing.Size(152, 49);
+            this.EditBtn.Size = new System.Drawing.Size(168, 49);
             this.EditBtn.TabIndex = 15;
             this.EditBtn.Text = "Edit";
             this.EditBtn.UseVisualStyleBackColor = false;
@@ -211,10 +212,10 @@
             this.ResetBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ResetBtn.ForeColor = System.Drawing.Color.Black;
             this.ResetBtn.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.ResetBtn.Location = new System.Drawing.Point(805, 298);
+            this.ResetBtn.Location = new System.Drawing.Point(801, 298);
             this.ResetBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ResetBtn.Name = "ResetBtn";
-            this.ResetBtn.Size = new System.Drawing.Size(141, 49);
+            this.ResetBtn.Size = new System.Drawing.Size(145, 48);
             this.ResetBtn.TabIndex = 14;
             this.ResetBtn.Text = "Reset";
             this.ResetBtn.UseVisualStyleBackColor = false;
@@ -224,7 +225,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox4.Location = new System.Drawing.Point(3, 0);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(60, 63);
@@ -238,11 +239,11 @@
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(33, 398);
+            this.panel4.Location = new System.Drawing.Point(33, 384);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 6);
-            this.panel4.Size = new System.Drawing.Size(265, 70);
+            this.panel4.Size = new System.Drawing.Size(280, 62);
             this.panel4.TabIndex = 4;
             // 
             // label5
@@ -265,7 +266,7 @@
             this.DeleteBtn.Location = new System.Drawing.Point(562, 298);
             this.DeleteBtn.Margin = new System.Windows.Forms.Padding(2);
             this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(146, 49);
+            this.DeleteBtn.Size = new System.Drawing.Size(154, 48);
             this.DeleteBtn.TabIndex = 13;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
@@ -279,10 +280,10 @@
             this.SaveBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SaveBtn.ForeColor = System.Drawing.Color.Black;
             this.SaveBtn.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.SaveBtn.Location = new System.Drawing.Point(74, 295);
+            this.SaveBtn.Location = new System.Drawing.Point(61, 295);
             this.SaveBtn.Margin = new System.Windows.Forms.Padding(2);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(142, 51);
+            this.SaveBtn.Size = new System.Drawing.Size(167, 51);
             this.SaveBtn.TabIndex = 12;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
@@ -290,11 +291,12 @@
             // 
             // PassTb
             // 
+            this.PassTb.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.PassTb.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PassTb.Location = new System.Drawing.Point(791, 231);
             this.PassTb.Margin = new System.Windows.Forms.Padding(2);
             this.PassTb.Name = "PassTb";
-            this.PassTb.Size = new System.Drawing.Size(193, 32);
+            this.PassTb.Size = new System.Drawing.Size(155, 32);
             this.PassTb.TabIndex = 10;
             // 
             // label7
@@ -322,7 +324,7 @@
             // 
             this.quantitylbl.AutoSize = true;
             this.quantitylbl.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.quantitylbl.Location = new System.Drawing.Point(805, 197);
+            this.quantitylbl.Location = new System.Drawing.Point(791, 195);
             this.quantitylbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.quantitylbl.Name = "quantitylbl";
             this.quantitylbl.Size = new System.Drawing.Size(134, 32);
@@ -342,20 +344,22 @@
             // 
             // PhoneTb
             // 
+            this.PhoneTb.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.PhoneTb.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PhoneTb.Location = new System.Drawing.Point(298, 231);
+            this.PhoneTb.Location = new System.Drawing.Point(315, 231);
             this.PhoneTb.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneTb.Name = "PhoneTb";
-            this.PhoneTb.Size = new System.Drawing.Size(179, 32);
+            this.PhoneTb.Size = new System.Drawing.Size(168, 32);
             this.PhoneTb.TabIndex = 4;
             // 
             // UnameTb
             // 
+            this.UnameTb.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.UnameTb.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UnameTb.Location = new System.Drawing.Point(50, 231);
+            this.UnameTb.Location = new System.Drawing.Point(61, 231);
             this.UnameTb.Margin = new System.Windows.Forms.Padding(2);
             this.UnameTb.Name = "UnameTb";
-            this.UnameTb.Size = new System.Drawing.Size(181, 32);
+            this.UnameTb.Size = new System.Drawing.Size(167, 32);
             this.UnameTb.TabIndex = 3;
             this.UnameTb.TextChanged += new System.EventHandler(this.UnameTb_TextChanged);
             // 
@@ -398,7 +402,7 @@
             // 
             this.Usrnametitlelbl.AutoSize = true;
             this.Usrnametitlelbl.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Usrnametitlelbl.Location = new System.Drawing.Point(50, 186);
+            this.Usrnametitlelbl.Location = new System.Drawing.Point(62, 195);
             this.Usrnametitlelbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Usrnametitlelbl.Name = "Usrnametitlelbl";
             this.Usrnametitlelbl.Size = new System.Drawing.Size(166, 32);
@@ -410,7 +414,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox6.Location = new System.Drawing.Point(2, 6);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(50, 50);
@@ -447,10 +451,10 @@
             this.panel6.Controls.Add(this.pictureBox6);
             this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.label9);
-            this.panel6.Location = new System.Drawing.Point(33, 630);
+            this.panel6.Location = new System.Drawing.Point(34, 624);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(265, 63);
+            this.panel6.Size = new System.Drawing.Size(280, 58);
             this.panel6.TabIndex = 6;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
@@ -466,7 +470,7 @@
             this.panel1.Location = new System.Drawing.Point(11, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(346, 921);
+            this.panel1.Size = new System.Drawing.Size(346, 850);
             this.panel1.TabIndex = 4;
             // 
             // panel5
@@ -475,10 +479,10 @@
             this.panel5.Controls.Add(this.pictureBox5);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Location = new System.Drawing.Point(33, 515);
+            this.panel5.Location = new System.Drawing.Point(33, 505);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(265, 66);
+            this.panel5.Size = new System.Drawing.Size(280, 62);
             this.panel5.TabIndex = 5;
             // 
             // label1
@@ -496,7 +500,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(332, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(366, 17);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(364, 155);
@@ -505,7 +509,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.Controls.Add(this.AddTb);
             this.panel2.Controls.Add(this.UserDGV);
             this.panel2.Controls.Add(this.userlistlbl);
@@ -524,16 +528,17 @@
             this.panel2.Location = new System.Drawing.Point(361, 11);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1058, 921);
+            this.panel2.Size = new System.Drawing.Size(1058, 850);
             this.panel2.TabIndex = 5;
             // 
             // AddTb
             // 
+            this.AddTb.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.AddTb.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AddTb.Location = new System.Drawing.Point(544, 231);
+            this.AddTb.Location = new System.Drawing.Point(562, 231);
             this.AddTb.Margin = new System.Windows.Forms.Padding(4);
             this.AddTb.Name = "AddTb";
-            this.AddTb.Size = new System.Drawing.Size(210, 32);
+            this.AddTb.Size = new System.Drawing.Size(154, 32);
             this.AddTb.TabIndex = 21;
             // 
             // Users
@@ -541,7 +546,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
-            this.ClientSize = new System.Drawing.Size(1429, 940);
+            this.ClientSize = new System.Drawing.Size(1429, 872);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -253,6 +253,21 @@ namespace BookManagementSystem
             
         }
 
+        private void Booktitlelbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Authorlbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
         string prodname ="Null";
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {

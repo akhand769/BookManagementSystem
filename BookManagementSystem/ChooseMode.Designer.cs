@@ -40,7 +40,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Khaki;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(83, 139);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
@@ -54,7 +54,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Khaki;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(332, 139);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
@@ -68,7 +68,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Khaki;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(593, 139);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
