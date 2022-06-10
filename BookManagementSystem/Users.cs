@@ -191,5 +191,25 @@ namespace BookManagementSystem
             Obj.Show();
             this.Hide();
         }
+
+        private void Users_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UnameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Usrnametitlelbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
