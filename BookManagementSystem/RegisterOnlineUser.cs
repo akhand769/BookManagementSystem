@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace BookManagementSystem
 {
@@ -21,6 +22,9 @@ namespace BookManagementSystem
         
         private void button1_Click(object sender, EventArgs e)
         {
+            string pattern = null;
+            pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+
             if (mbbx.Text == "" || Convert.ToInt64(mbbx.Text) > 9999999999 || Convert.ToInt64(mbbx.Text) < 6000000000)
             {
                 MessageBox.Show("Invalid Phone Number");
@@ -36,10 +40,13 @@ namespace BookManagementSystem
                 }
                 else
                 {
-                    if (Namebx.Text == "" || maibx.Text == "" || dobbx.Text == "" || addbx.Text == "")
+                    if (!Regex.IsMatch(maibx.Text, pattern))
                     {
-                        MessageBox.Show("All fields are mandatory to Fill");
-                        
+                        MessageBox.Show("Invalid Email address ");
+                    }
+                    else if (Namebx.Text == "" || maibx.Text == "" || dobbx.Text == "" || addbx.Text == "")
+                    {
+                        MessageBox.Show("All fields are mandatory to Fill"); 
                     }
                     else
                     {
@@ -67,19 +74,7 @@ namespace BookManagementSystem
 
                     //Do something
                 }
-                //SqlDataAdapter sda3 = new SqlDataAdapter("select * from OnlineUser where email ='" + maibx.Text + "'", Con);
-                // DataTable dt = new DataTable();
-                // sda3.Fill(dt);
-                // object value = dt[email];
-                // if (value == DBNull.Value)
-                //    MessageBox.Show(dt.Rows[0][0].ToString());
-                //if (Int64.Parse(dt.Rows[0][0].ToString())>1000)
-                {
-
-
-                   
-                       // MessageBox.Show("User Already exists");
-                }
+                
                 
                 
 

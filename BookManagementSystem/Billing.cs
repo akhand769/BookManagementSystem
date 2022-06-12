@@ -143,21 +143,7 @@ namespace BookManagementSystem
 
                 try
                 {
-                    Con.Open();
-                    if(BNameTb.Text=="")
-                    {
-                        MessageBox.Show("Null");
-                    }
-                    int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
-                  
-                    GrndTotal = GrndTotal + total;
-                    String str = DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss");
-             
-                    string query = "insert into BillTbl values('"+BNameTb.Text+"','"+ClientTb.Text+"','"+GrndTotal+"','"+str+"')";
-                    SqlCommand cmd = new SqlCommand(query, Con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Bill Saved Successfully");
-                    Con.Close();
+                   
                    
                     Reset();
                    
@@ -288,7 +274,21 @@ namespace BookManagementSystem
                 pos += 25;
 
             }
-            
+            Con.Open();
+            if (BNameTb.Text == "")
+            {
+                MessageBox.Show("Null");
+            }
+            //int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
+
+            //GrndTotal = GrndTotal + total;
+            String str = DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss");
+
+            string query = "insert into BillTbl values('" + BNameTb.Text + "','" + ClientTb.Text + "','" + GrndTotal + "','" + str + "')";
+            SqlCommand cmd = new SqlCommand(query, Con);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Bill Saved Successfully");
+            Con.Close();
             e.Graphics.DrawString("Grand Total : RS" + GrndTotal, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Crimson, new Point(60, pos + 50));
             e.Graphics.DrawString("**********BookStore**********" , new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Crimson, new Point(40, pos + 85));
             BillDGV.Rows.Clear();
