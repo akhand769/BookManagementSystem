@@ -26,14 +26,7 @@ namespace BookManagementSystem
         {
 
         }
-        public int Value
-        {
-            get { return flag; }
-        }
-        public int Value2
-        {
-            get { return flag; }
-        }
+       
         public static BookOrder instance = null;
         private void button1_Click(object sender, EventArgs e)
         {
