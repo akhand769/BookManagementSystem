@@ -15,6 +15,7 @@ namespace BookManagementSystem
     {
         int n = 0;
         static int GrndTotal = 0;
+        private static BookOrder i_Instance = null;
         public BookOrder()
         {
             InitializeComponent();
@@ -116,40 +117,62 @@ namespace BookManagementSystem
             }
             
             
-        } 
+        }
+       
+        public static BookOrder Instance
+        {
+            get
+            {
+                if (BookOrder.i_Instance == null) BookOrder.i_Instance = new BookOrder();
+                return BookOrder.i_Instance;
+            }
+        }
         private void PrintBtn_Click(object sender, EventArgs e)
         {
-            if (Bookname.Text == "")
+           
+         
+            LogintoBook Obj = new LogintoBook();
+            
+            Obj.ShowDialog();
+            
+          
             {
-                MessageBox.Show("Select Book");
-            }
-            else
-            {
-                printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pprnm", 285, 600);
-                if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
+      
                 {
-                    printDocument1.Print();
-                }
+                    if (Bookname.Text == "")
+                    {
+                        MessageBox.Show("Select Book");
+                    }
+                    else
+                    {
+                        printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pprnm", 285, 600);
+                        if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            printDocument1.Print();
+                        }
 
-                try
-                {
-                    Con.Open();
-                    int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
-                    GrndTotal = GrndTotal + total;
-                    String str= DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss");
-                    string query = "insert into BillTbl values('"+Bookname.Text+ "','" +LoginUser.UserName + "','" +GrndTotal+ "','" + str + "')";
-                    SqlCommand cmd = new SqlCommand(query, Con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Order Placed Successfully");
-                    Con.Close();
-                    
-                    Reset();
-                }
-                catch (Exception Ex)
-                {
-                    MessageBox.Show(Ex.Message);
-                }
+                        try
+                        {
+                            Con.Open();
+                            int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
+                            GrndTotal = GrndTotal + total;
+                            String str = DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss");
+                            string query = "insert into BillTbl values('" + Bookname.Text + "','" + LoginUser.UserName + "','" + GrndTotal + "','" + str + "')";
+                            SqlCommand cmd = new SqlCommand(query, Con);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Order Placed Successfully");
+                            Con.Close();
 
+                            Reset();
+                        }
+                        catch (Exception Ex)
+                        {
+                            MessageBox.Show(Ex.Message);
+                        }
+                        //break;
+
+                    }
+                }
             }
         }
         private void printPreviewDialog1_Load(object sender, EventArgs e)
