@@ -153,15 +153,7 @@ namespace BookManagementSystem
 
                         try
                         {
-                            Con.Open();
-                            int total = Convert.ToInt32(QtyTb.Text) * Convert.ToInt32(PriceTb.Text);
-                            GrndTotal = GrndTotal + total;
-                            String str = DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss");
-                            string query = "insert into BillTbl values('" + Bookname.Text + "','" + LoginUser.UserName + "','" + GrndTotal + "','" + str + "')";
-                            SqlCommand cmd = new SqlCommand(query, Con);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Order Placed Successfully");
-                            Con.Close();
+                            
 
                             Reset();
                         }
@@ -342,32 +334,44 @@ namespace BookManagementSystem
         string prodname;
         private void printDocument1_PrintPage_1(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+            
             e.Graphics.DrawString("Book Shop", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Red, new Point(80));
-            e.Graphics.DrawString("ID PRODUCT PRICE QUANTITY TOTAL", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Red, new Point(26, 40));
+            e.Graphics.DrawString("ID  PRODUCT  PRICE  QUANTITY  TOTAL", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Red, new Point(20, 40));
             foreach (DataGridViewRow row in BillDGV.Rows)
             {
                 prodid = Convert.ToInt32(row.Cells["Column1"].Value);
-
                 prodname = "" + row.Cells["Column2"].Value;
                 prodprice = Convert.ToInt32(row.Cells["Column3"].Value);
                 prodqty = Convert.ToInt32(row.Cells["Column4"].Value);
                 tottal = Convert.ToInt32(row.Cells["Column5"].Value);
-                e.Graphics.DrawString("" + prodid, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(26, pos));
-                e.Graphics.DrawString("" + prodname, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(45, pos));
-                e.Graphics.DrawString("" + prodprice, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(120, pos), new StringFormat());
+                e.Graphics.DrawString("" + prodid, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(20, pos));
+                e.Graphics.DrawString("" + prodname, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(42, pos));
+                e.Graphics.DrawString("" + prodprice, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(122, pos), new StringFormat());
                 e.Graphics.DrawString("" + prodqty, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(170, pos), new StringFormat());
                 e.Graphics.DrawString("" + tottal, new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Blue, new Point(235, pos), new StringFormat());
                 pos += 25;
 
             }
-            e.Graphics.DrawString("Grand Total : RS  " + GrndTotal, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Crimson, new Point(60, pos + 50));
+            Con.Open();
+            if (Bookname.Text == "")
+            {
+                MessageBox.Show("Null");
+            }
+            
+            String str = DateTime.Now.ToString("dddd , MMM dd yyyy,hh:mm:ss");
+
+            string query = "insert into BillTbl values('" + Bookname.Text + "','" + LoginUser.UserName + "','" + GrndTotal + "','" + str + "')";
+            SqlCommand cmd = new SqlCommand(query, Con);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Bill Saved Successfully");
+            Con.Close();
+            e.Graphics.DrawString("Grand Total : RS" + GrndTotal, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Crimson, new Point(60, pos + 50));
             e.Graphics.DrawString("**********BookStore**********", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Crimson, new Point(40, pos + 85));
             BillDGV.Rows.Clear();
             BillDGV.Refresh();
-           
             TotalLbl.Text = "Total";
-            
             GrndTotal = 0;
+            pos = 60;
         }
         private void Reset()
         {
